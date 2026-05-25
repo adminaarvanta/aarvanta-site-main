@@ -5,17 +5,16 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Push built static files to the gh-pages branch (Settings → Pages → gh-pages / root)
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: gh-pages-deploy
+  cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_BASE_PATH: /aarvanta-site-main
@@ -38,18 +37,10 @@ jobs:
       - name: Build static site
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          path: ./out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          branch: gh-pages
+          folder: out
+          clean: true
+          single-commit: true
