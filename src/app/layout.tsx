@@ -19,6 +19,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} — AI Infrastructure for Real Businesses`,
     template: `%s | ${siteConfig.name}`,
