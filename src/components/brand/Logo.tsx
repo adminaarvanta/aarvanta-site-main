@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { withBasePath } from "@/lib/basePath";
 
 type LogoProps = {
   height?: number;
@@ -9,7 +10,7 @@ type LogoProps = {
 export default function Logo({ height = 44, href = "/" }: LogoProps) {
   const image = (
     <Image
-      src="/aarvanta-logo.png"
+      src={withBasePath("/aarvanta-logo.png")}
       alt="AARVANTA LTD"
       width={Math.round(height * 2.4)}
       height={height}

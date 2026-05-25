@@ -3,6 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { siteOrigin, withBasePath } from "@/lib/basePath";
 import { siteConfig, seoKeywords } from "@/lib/content";
 import "./globals.css";
 
@@ -19,7 +20,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(siteOrigin()),
   title: {
     default: `${siteConfig.name} — AI Infrastructure for Real Businesses`,
     template: `%s | ${siteConfig.name}`,
@@ -27,13 +28,13 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: seoKeywords,
   icons: {
-    icon: "/aarvanta-logo.png",
+    icon: withBasePath("/aarvanta-logo.png"),
   },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     type: "website",
-    images: ["/aarvanta-logo.png"],
+    images: [withBasePath("/aarvanta-logo.png")],
   },
 };
 
