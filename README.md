@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AARVANTA LTD — Website
+
+Premium UK-based AI infrastructure company website built with Next.js, Material UI, and Tailwind CSS.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **Material UI 9** — components and theming
+- **Tailwind CSS 4** — utility classes where needed
+- **Framer Motion** — subtle scroll animations
+- **Inter + Manrope** — typography (Google Fonts)
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with all blueprint sections |
+| `/about` | Company story and values |
+| `/solutions` | AI infrastructure solutions |
+| `/products` | LeadOS, WhatsAppOS, VoiceOS, SiteOS, ContentOS, CRMOS |
+| `/industries` | Industry-specific use cases |
+| `/partner-program` | White-label partner program |
+| `/case-studies` | Business outcome highlights |
+| `/pricing` | Tier structure (custom pricing) |
+| `/blog` | Operational insights and guides |
+| `/contact` | Contact form |
+| `/book-demo` | Demo booking form |
 
-## Learn More
+## Design System
 
-To learn more about Next.js, take a look at the following resources:
+- **Colors:** Off-white `#F8F7F4`, Deep navy `#0F1729`, Muted gold `#C4A962`
+- **Tone:** Premium, enterprise-ready, calm confidence
+- **Content:** Centralized in `src/lib/content.ts`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Build
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+npm start
+```
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/              # Next.js pages
+├── components/
+│   ├── home/         # Homepage sections
+│   ├── layout/       # Header, Footer, Theme
+│   ├── forms/        # Contact & demo forms
+│   └── ui/           # Reusable UI components
+└── lib/
+    ├── content.ts    # All site content
+    └── theme.ts      # MUI theme configuration
+```
