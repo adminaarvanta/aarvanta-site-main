@@ -3,19 +3,39 @@ import Link from "next/link";
 import { withBasePath } from "@/lib/basePath";
 
 type LogoProps = {
+  /** Emblem height (mark) or max height hint (full) */
   height?: number;
+  /** Display width for full logo (emblem + wordmark); height scales automatically */
+  width?: number;
   href?: string | null;
+  /** `mark` = emblem only (header); `full` = original logo with wordmark */
+  variant?: "full" | "mark";
 };
 
-export default function Logo({ height = 44, href = "/" }: LogoProps) {
+export default function Logo({
+  height = 44,
+  width,
+  href = "/",
+  variant = "full",
+}: LogoProps) {
+  const isMark = variant === "mark";
+  const src = withBasePath(isMark ? "/aarvanta-logo-mark.png" : "/aarvanta-logo.png");
+
+  const displayWidth = isMark ? height : (width ?? 220);
+  const displayHeight = isMark ? height : undefined;
+
   const image = (
     <Image
-      src={withBasePath("/aarvanta-logo.png")}
+      src={src}
       alt="AARVANTA LTD"
-      width={Math.round(height * 2.4)}
-      height={height}
-      priority
-      style={{ width: "auto", height, objectFit: "contain" }}
+      width={1024}
+      height={1024}
+      priority={isMark}
+      style={{
+        width: displayWidth,
+        height: displayHeight ?? "auto",
+        objectFit: "contain",
+      }}
     />
   );
 
@@ -24,7 +44,7 @@ export default function Logo({ height = 44, href = "/" }: LogoProps) {
   }
 
   return (
-    <Link href={href} style={{ textDecoration: "none", display: "inline-flex" }}>
+    <Link href={href} style={{ textDecoration: "none", display: "inline-flex", lineHeight: 0 }}>
       {image}
     </Link>
   );

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { colors } from "@/lib/theme";
 
 interface PageHeroProps {
@@ -10,66 +10,40 @@ interface PageHeroProps {
 export default function PageHero({ title, subtitle, children }: PageHeroProps) {
   return (
     <Box
+      className="hero-waves"
       sx={{
-        bgcolor: colors.deepNavy,
-        color: colors.white,
-        pt: { xs: 10, md: 14 },
-        pb: { xs: 8, md: 10 },
-        position: "relative",
-        overflow: "hidden",
+        pt: { xs: 8, md: 12 },
+        pb: { xs: 6, md: 8 },
+        borderBottom: `1px solid ${colors.border}`,
       }}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          right: 0,
-          width: "50%",
-          height: "100%",
-          background: `radial-gradient(ellipse at 80% 20%, rgba(196, 169, 98, 0.08) 0%, transparent 60%)`,
-          pointerEvents: "none",
-        }}
-      />
-      <Box
-        sx={{
-          maxWidth: 1200,
-          mx: "auto",
-          px: { xs: 3, md: 4 },
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <Box component="h1" sx={{ m: 0, mb: subtitle ? 2 : 0 }}>
-          <Box
-            component="span"
-            sx={{
-              display: "block",
-              fontFamily: "var(--font-manrope)",
-              fontWeight: 700,
-              fontSize: { xs: "2rem", sm: "2.75rem", md: "3.25rem" },
-              lineHeight: 1.15,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {title}
-          </Box>
-        </Box>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
+        <Typography
+          component="h1"
+          className="font-serif"
+          sx={{
+            fontSize: { xs: "2rem", md: "2.75rem" },
+            lineHeight: 1.2,
+            mb: subtitle ? 2 : 0,
+            color: colors.textDark,
+          }}
+        >
+          {title}
+        </Typography>
         {subtitle && (
-          <Box
-            component="p"
+          <Typography
             sx={{
-              m: 0,
-              fontSize: { xs: "1rem", md: "1.2rem" },
-              color: "rgba(255,255,255,0.75)",
+              fontSize: { xs: "1rem", md: "1.125rem" },
+              color: colors.textMuted,
               maxWidth: 640,
               lineHeight: 1.7,
             }}
           >
             {subtitle}
-          </Box>
+          </Typography>
         )}
         {children}
-      </Box>
+      </Container>
     </Box>
   );
 }

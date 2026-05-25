@@ -19,7 +19,7 @@ export default function SolutionsPage() {
       />
 
       <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
           <Grid container spacing={4}>
             {featureGrid.map((solution) => (
               <Grid key={solution.title} size={{ xs: 12, sm: 6 }}>
@@ -51,7 +51,7 @@ export default function SolutionsPage() {
       </Box>
 
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.deepNavy }}>
-        <Container maxWidth="md">
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
           <Typography
             variant="h4"
             sx={{ color: colors.white, textAlign: "center", mb: 4 }}

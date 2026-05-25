@@ -1,121 +1,88 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Box, Button, Container, Typography } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { motion } from "framer-motion";
+import { withBasePath } from "@/lib/basePath";
 import { colors } from "@/lib/theme";
-import HeroVisual from "./HeroVisual";
 
 export default function HeroSection() {
   return (
-    <Box
-      sx={{
-        position: "relative",
-        pt: { xs: 4, md: 8 },
-        pb: { xs: 8, md: 12 },
-        overflow: "hidden",
-      }}
-    >
-      <Box
-        sx={{
-          position: "absolute",
-          top: -100,
-          right: -200,
-          width: 600,
-          height: 600,
-          borderRadius: "50%",
-          background: `radial-gradient(circle, rgba(196, 169, 98, 0.06) 0%, transparent 70%)`,
-          pointerEvents: "none",
-        }}
-      />
-
-      <Container maxWidth="xl">
+    <Box className="hero-waves" sx={{ position: "relative", overflow: "hidden", pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 10 } }}>
+      <Container maxWidth="lg">
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", lg: "1fr 1fr" },
-            gap: { xs: 6, lg: 8 },
+            gridTemplateColumns: { xs: "1fr", md: "0.92fr 1.08fr" },
+            gap: { xs: 4, md: 5 },
             alignItems: "center",
           }}
         >
-          <Box
-            component={motion.div}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
+          <Box>
             <Typography
-              variant="overline"
+              component="h1"
+              className="font-serif"
               sx={{
-                color: colors.mutedGold,
-                fontWeight: 600,
-                letterSpacing: "0.15em",
-                mb: 2,
-                display: "block",
-              }}
-            >
-              AI INFRASTRUCTURE COMPANY
-            </Typography>
-
-            <Typography
-              variant="h1"
-              sx={{
-                fontSize: { xs: "2.25rem", sm: "3rem", md: "3.5rem" },
-                color: colors.deepNavy,
-                lineHeight: 1.1,
+                fontSize: { xs: "2.25rem", sm: "2.75rem", md: "3.25rem" },
+                lineHeight: 1.15,
                 mb: 3,
+                color: colors.textDark,
               }}
             >
-              AI Infrastructure Built for Real Businesses.
+              Intelligent Solutions.
+              <br />
+              Limitless Possibilities.
             </Typography>
-
             <Typography
-              variant="body1"
               sx={{
-                color: colors.textSecondary,
-                fontSize: { xs: "1rem", md: "1.15rem" },
-                lineHeight: 1.8,
+                color: colors.textMuted,
+                fontSize: { xs: "0.95rem", md: "1.05rem" },
+                lineHeight: 1.85,
                 mb: 4,
-                maxWidth: 540,
+                maxWidth: 480,
               }}
             >
-              AARVANTA builds scalable AI systems for businesses, agencies, and
-              global partners — combining automation, communication, lead
-              generation, voice AI, and operational infrastructure into one
-              connected ecosystem.
+              Aarvanta Ltd is a forward-thinking developer of AI-powered SaaS products
+              designed to simplify business operations, enhance productivity, and drive
+              innovation across industries.
             </Typography>
-
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
-              <Button
-                component={Link}
-                href="/book-demo"
-                variant="contained"
-                color="primary"
-                size="large"
-                endIcon={<ArrowForwardIcon />}
-              >
-                Book a Demo
-              </Button>
-              <Button
-                component={Link}
-                href="/products"
-                variant="outlined"
-                color="primary"
-                size="large"
-              >
+              <Button component={Link} href="/products" variant="contained" color="primary" size="large">
                 Explore Products
+              </Button>
+              <Button component={Link} href="/contact" variant="outlined" color="primary" size="large">
+                Contact Us
               </Button>
             </Box>
           </Box>
 
           <Box
-            component={motion.div}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              position: "relative",
+            }}
           >
-            <HeroVisual />
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                maxWidth: { xs: 440, sm: 520, md: "100%", lg: 720 },
+                mx: { xs: "auto", md: 0 },
+                pl: { md: 2 },
+              }}
+            >
+              <Image
+                src={withBasePath("/aarvanta-logo.png")}
+                alt="AARVANTA LTD"
+                width={1024}
+                height={1024}
+                priority
+                sizes="(max-width: 600px) 440px, (max-width: 1200px) 50vw, 720px"
+                style={{ width: "100%", height: "auto", objectFit: "contain" }}
+              />
+            </Box>
           </Box>
         </Box>
       </Container>

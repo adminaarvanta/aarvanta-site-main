@@ -20,7 +20,7 @@ export default function ProductsPage() {
       />
 
       <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
           <Grid container spacing={4}>
             {products.map((product) => (
               <Grid key={product.id} size={{ xs: 12, md: 6 }}>

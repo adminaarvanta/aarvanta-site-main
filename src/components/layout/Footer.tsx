@@ -1,152 +1,106 @@
 "use client";
 
 import Link from "next/link";
-import { Box, Container, Divider, Grid, Typography } from "@mui/material";
-import { products } from "@/lib/content";
+import { Box, Container, Divider, Grid, IconButton, Typography } from "@mui/material";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import { navLinks } from "@/lib/content";
 import { colors } from "@/lib/theme";
 import Logo from "@/components/brand/Logo";
-
-const companyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Partner Program", href: "/partner-program" },
-  { label: "Careers", href: "/contact" },
-  { label: "Contact", href: "/contact" },
-];
-
-const legalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
-  { label: "Terms", href: "/terms" },
-  { label: "GDPR", href: "/gdpr" },
-  { label: "Cookies", href: "/cookies" },
-];
 
 export default function Footer() {
   return (
     <Box
       component="footer"
       sx={{
-        bgcolor: colors.deepNavy,
-        color: colors.white,
-        pt: { xs: 8, md: 10 },
+        bgcolor: colors.cream,
+        borderTop: `1px solid ${colors.border}`,
+        pt: { xs: 6, md: 8 },
         pb: 4,
-        mt: "auto",
       }}
     >
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
-            <Box sx={{ mb: 2 }}>
-              <Logo height={64} />
+            <Box sx={{ maxWidth: { xs: 280, sm: 320, md: 300 } }}>
+              <Logo variant="full" width={280} href="/" />
             </Box>
-            <Typography
-              variant="body2"
-              sx={{ color: "rgba(255,255,255,0.65)", maxWidth: 320, lineHeight: 1.7 }}
-            >
-              Premium UK-based AI infrastructure company. Global AI systems,
-              automation, SaaS, and white-label ecosystem.
-            </Typography>
           </Grid>
 
           <Grid size={{ xs: 6, sm: 4, md: 2 }}>
             <Typography
-              variant="subtitle2"
-              sx={{ color: colors.mutedGold, mb: 2, fontWeight: 600 }}
+              sx={{ color: colors.gold, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}
             >
-              Products
+              Quick Links
             </Typography>
-            {products.map((product) => (
-              <Typography
-                key={product.id}
-                component={Link}
-                href="/products"
-                variant="body2"
-                sx={{
-                  display: "block",
-                  color: "rgba(255,255,255,0.65)",
-                  textDecoration: "none",
-                  mb: 1,
-                  "&:hover": { color: colors.white },
-                  transition: "color 0.2s",
-                }}
-              >
-                {product.shortName}
+            {navLinks.map((link) => (
+              <Typography key={link.href + link.label} variant="body2" sx={{ mb: 1 }}>
+                <Link
+                  href={link.href}
+                  style={{ color: colors.textMuted, textDecoration: "none" }}
+                >
+                  {link.label}
+                </Link>
               </Typography>
             ))}
           </Grid>
 
-          <Grid size={{ xs: 6, sm: 4, md: 2 }}>
+          <Grid size={{ xs: 6, sm: 4, md: 3 }}>
             <Typography
-              variant="subtitle2"
-              sx={{ color: colors.mutedGold, mb: 2, fontWeight: 600 }}
+              sx={{ color: colors.gold, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}
             >
-              Company
+              Contact Us
             </Typography>
-            {companyLinks.map((link) => (
-              <Typography
-                key={link.href + link.label}
-                component={Link}
-                href={link.href}
-                variant="body2"
-                sx={{
-                  display: "block",
-                  color: "rgba(255,255,255,0.65)",
-                  textDecoration: "none",
-                  mb: 1,
-                  "&:hover": { color: colors.white },
-                  transition: "color 0.2s",
-                }}
-              >
-                {link.label}
-              </Typography>
-            ))}
+            <Typography variant="body2" sx={{ color: colors.textMuted, mb: 1 }}>
+              <Link href="mailto:hello@aarvanta.com" style={{ color: "inherit", textDecoration: "none" }}>
+                hello@aarvanta.com
+              </Link>
+            </Typography>
+            <Typography variant="body2" sx={{ color: colors.textMuted, mb: 1 }}>
+              +91 98765 43210
+            </Typography>
+            <Typography variant="body2" sx={{ color: colors.textMuted }}>
+              United Kingdom
+            </Typography>
           </Grid>
 
-          <Grid size={{ xs: 12, sm: 4, md: 2 }}>
+          <Grid size={{ xs: 12, sm: 4, md: 3 }}>
             <Typography
-              variant="subtitle2"
-              sx={{ color: colors.mutedGold, mb: 2, fontWeight: 600 }}
+              sx={{ color: colors.gold, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}
             >
-              Legal
+              Follow Us
             </Typography>
-            {legalLinks.map((link) => (
-              <Typography
-                key={link.label}
-                component={Link}
-                href={link.href}
-                variant="body2"
-                sx={{
-                  display: "block",
-                  color: "rgba(255,255,255,0.65)",
-                  textDecoration: "none",
-                  mb: 1,
-                  "&:hover": { color: colors.white },
-                  transition: "color 0.2s",
-                }}
-              >
-                {link.label}
-              </Typography>
-            ))}
+            <Box sx={{ display: "flex", gap: 1 }}>
+              {[
+                { icon: <LinkedInIcon fontSize="small" />, href: "#" },
+                { icon: <TwitterIcon fontSize="small" />, href: "#" },
+                { icon: <InstagramIcon fontSize="small" />, href: "#" },
+              ].map((social, i) => (
+                <IconButton
+                  key={i}
+                  href={social.href}
+                  component="a"
+                  sx={{
+                    border: `1px solid ${colors.gold}`,
+                    color: colors.gold,
+                    width: 36,
+                    height: 36,
+                    "&:hover": { bgcolor: "rgba(194, 155, 64, 0.1)" },
+                  }}
+                >
+                  {social.icon}
+                </IconButton>
+              ))}
+            </Box>
           </Grid>
         </Grid>
 
-        <Divider sx={{ borderColor: "rgba(255,255,255,0.1)", my: 4 }} />
+        <Divider sx={{ borderColor: colors.border, my: 4 }} />
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", sm: "row" },
-            justifyContent: "space-between",
-            alignItems: { xs: "flex-start", sm: "center" },
-            gap: 2,
-          }}
-        >
-          <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.5)" }}>
-            © {new Date().getFullYear()} AARVANTA LTD. All rights reserved.
-          </Typography>
-          <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.5)" }}>
-            Built in the UK. Designed for global scale.
-          </Typography>
-        </Box>
+        <Typography variant="body2" align="center" sx={{ color: colors.textMuted, fontSize: "0.8rem" }}>
+          © {new Date().getFullYear()} Aarvanta Ltd. All rights reserved.
+        </Typography>
       </Container>
     </Box>
   );

@@ -7,15 +7,59 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Products", href: "/products" },
-  { label: "Industries", href: "/industries" },
-  { label: "Partner Program", href: "/partner-program" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Our Products", href: "/products" },
+  { label: "Services", href: "/solutions" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact Us", href: "/contact" },
+];
+
+export const homeTrustFeatures = [
+  { title: "AI-Powered Innovation", icon: "innovation" },
+  { title: "Secure & Reliable", icon: "secure" },
+  { title: "Scalable Solutions", icon: "scale" },
+  { title: "Dedicated Support", icon: "support" },
+];
+
+export const homeProducts = [
+  {
+    name: "AarvX",
+    subtitle: "AI Assistant",
+    description:
+      "Intelligent virtual assistant to automate tasks, answer queries, and boost productivity.",
+    href: "/products",
+    icon: "assistant",
+  },
+  {
+    name: "Aarv Analytics",
+    subtitle: "",
+    description:
+      "Powerful data analytics platform to gain insights and make informed business decisions.",
+    href: "/products",
+    icon: "analytics",
+  },
+  {
+    name: "Aarv Automate",
+    subtitle: "",
+    description:
+      "Streamline workflows and automate repetitive tasks with our smart automation tools.",
+    href: "/products",
+    icon: "automate",
+  },
+];
+
+export const homeStats = [
+  { value: "3+", label: "Products Launched", icon: "rocket" },
+  { value: "100%", label: "Customer Satisfaction", icon: "star" },
+  { value: "24/7", label: "Support Available", icon: "support" },
+  { value: "∞", label: "Future Ready", icon: "infinity" },
+];
+
+export const aboutChecklist = [
+  "Innovation at the core",
+  "Customer success first",
+  "Technology for a better tomorrow",
 ];
 
 export const products = [
