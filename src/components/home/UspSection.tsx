@@ -4,15 +4,15 @@ import { Box, Container, Typography } from "@mui/material";
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { ecosystemFlow } from "@/lib/content";
+import { ecosystemFlow, uspContent } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function UspSection() {
   return (
     <Box
       sx={{
-        py: { xs: 10, md: 14 },
-        bgcolor: colors.deepNavy,
+        py: { xs: 8, md: 12 },
+        bgcolor: colors.textDark,
         position: "relative",
         overflow: "hidden",
       }}
@@ -25,15 +25,15 @@ export default function UspSection() {
           width: 400,
           height: 400,
           borderRadius: "50%",
-          background: `radial-gradient(circle, rgba(196, 169, 98, 0.1) 0%, transparent 70%)`,
+          background: `radial-gradient(circle, rgba(194, 155, 64, 0.15) 0%, transparent 70%)`,
         }}
       />
 
-      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
+      <Container maxWidth="lg" sx={{ position: "relative", zIndex: 1, px: { xs: 2, md: 3 } }}>
         <AnimatedSection>
           <SectionHeading
-            title="Built As One Connected AI Ecosystem."
-            subtitle="Most AI platforms operate independently. AARVANTA products are designed to communicate with each other seamlessly."
+            title={uspContent.headline}
+            subtitle={uspContent.intro}
             light
           />
         </AnimatedSection>
@@ -42,7 +42,7 @@ export default function UspSection() {
           <Typography
             sx={{
               textAlign: "center",
-              color: "rgba(255,255,255,0.75)",
+              color: "rgba(255,255,255,0.8)",
               maxWidth: 720,
               mx: "auto",
               mb: 8,
@@ -50,9 +50,7 @@ export default function UspSection() {
               fontSize: { xs: "1rem", md: "1.1rem" },
             }}
           >
-            A lead generated through LeadOS can automatically trigger WhatsApp
-            conversations, AI voice calls, CRM workflows, analytics tracking, and
-            conversion funnels — without manual intervention.
+            {uspContent.body}
           </Typography>
         </AnimatedSection>
 
@@ -74,8 +72,8 @@ export default function UspSection() {
                     px: 4,
                     py: 2,
                     borderRadius: "12px",
-                    bgcolor: index === 0 ? colors.mutedGold : "rgba(255,255,255,0.08)",
-                    border: `1px solid ${index === 0 ? colors.mutedGold : "rgba(255,255,255,0.15)"}`,
+                    bgcolor: index === 0 ? colors.gold : "rgba(255,255,255,0.08)",
+                    border: `1px solid ${index === 0 ? colors.gold : "rgba(255,255,255,0.15)"}`,
                     minWidth: 240,
                     textAlign: "center",
                   }}
@@ -83,8 +81,7 @@ export default function UspSection() {
                   <Typography
                     sx={{
                       fontWeight: 600,
-                      color: index === 0 ? colors.deepNavy : colors.white,
-                      fontFamily: "var(--font-manrope)",
+                      color: index === 0 ? colors.white : colors.white,
                       fontSize: "1rem",
                     }}
                   >
@@ -93,7 +90,7 @@ export default function UspSection() {
                 </Box>
                 {index < ecosystemFlow.length - 1 && (
                   <ArrowDownwardIcon
-                    sx={{ color: colors.mutedGold, my: 0.5, fontSize: 20, opacity: 0.6 }}
+                    sx={{ color: colors.gold, my: 0.5, fontSize: 20, opacity: 0.6 }}
                   />
                 )}
               </Box>

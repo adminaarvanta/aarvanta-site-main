@@ -1,20 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import { Box, Button, Container, Typography } from "@mui/material";
-import { withBasePath } from "@/lib/basePath";
+import { Box, Container, Typography } from "@mui/material";
+import NavButton from "@/components/ui/NavButton";
+import HeroVisual from "@/components/home/HeroVisual";
+import { homeHero } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function HeroSection() {
   return (
-    <Box className="hero-waves" sx={{ position: "relative", overflow: "hidden", pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 10 } }}>
-      <Container maxWidth="lg">
+    <Box
+      className="hero-waves"
+      sx={{ position: "relative", overflow: "hidden", pt: { xs: 4, md: 6 }, pb: { xs: 6, md: 10 } }}
+    >
+      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "0.92fr 1.08fr" },
-            gap: { xs: 4, md: 5 },
+            gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+            gap: { xs: 4, md: 6 },
             alignItems: "center",
           }}
         >
@@ -23,15 +26,13 @@ export default function HeroSection() {
               component="h1"
               className="font-serif"
               sx={{
-                fontSize: { xs: "2.25rem", sm: "2.75rem", md: "3.25rem" },
+                fontSize: { xs: "2.25rem", sm: "2.75rem", md: "3.1rem" },
                 lineHeight: 1.15,
                 mb: 3,
                 color: colors.textDark,
               }}
             >
-              Intelligent Solutions.
-              <br />
-              Limitless Possibilities.
+              {homeHero.headline}
             </Typography>
             <Typography
               sx={{
@@ -39,50 +40,23 @@ export default function HeroSection() {
                 fontSize: { xs: "0.95rem", md: "1.05rem" },
                 lineHeight: 1.85,
                 mb: 4,
-                maxWidth: 480,
+                maxWidth: 520,
               }}
             >
-              Aarvanta Ltd is a forward-thinking developer of AI-powered SaaS products
-              designed to simplify business operations, enhance productivity, and drive
-              innovation across industries.
+              {homeHero.subheadline}
             </Typography>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2 }}>
-              <Button component={Link} href="/products" variant="contained" color="primary" size="large">
-                Explore Products
-              </Button>
-              <Button component={Link} href="/contact" variant="outlined" color="primary" size="large">
-                Contact Us
-              </Button>
+              <NavButton href={homeHero.primaryCta.href} variant="contained" color="primary" size="large">
+                {homeHero.primaryCta.label}
+              </NavButton>
+              <NavButton href={homeHero.secondaryCta.href} variant="outlined" color="primary" size="large">
+                {homeHero.secondaryCta.label}
+              </NavButton>
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              position: "relative",
-            }}
-          >
-            <Box
-              sx={{
-                position: "relative",
-                width: "100%",
-                maxWidth: { xs: 440, sm: 520, md: "100%", lg: 720 },
-                mx: { xs: "auto", md: 0 },
-                pl: { md: 2 },
-              }}
-            >
-              <Image
-                src={withBasePath("/aarvanta-logo.png")}
-                alt="AARVANTA LTD"
-                width={1024}
-                height={1024}
-                priority
-                sizes="(max-width: 600px) 440px, (max-width: 1200px) 50vw, 720px"
-                style={{ width: "100%", height: "auto", objectFit: "contain" }}
-              />
-            </Box>
+          <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <HeroVisual />
           </Box>
         </Box>
       </Container>

@@ -1,37 +1,34 @@
 "use client";
 
-import Link from "next/link";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { partnerFeatures } from "@/lib/content";
+import NavButton from "@/components/ui/NavButton";
+import { partnerFeatures, partnerSection } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function PartnerSection() {
   return (
-    <Box sx={{ py: { xs: 10, md: 14 }, bgcolor: colors.white }}>
-      <Container maxWidth="xl">
+    <Box className="section-cream" sx={{ py: { xs: 8, md: 12 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <Grid container spacing={6} sx={{ alignItems: "center" }}>
           <Grid size={{ xs: 12, md: 6 }}>
             <AnimatedSection>
               <SectionHeading
-                title="Build Your Own AI Business Under Your Brand."
-                subtitle="AARVANTA's white-label infrastructure allows agencies, consultants, and entrepreneurs to offer advanced AI systems under their own branding while we power the backend technology."
+                title={partnerSection.headline}
+                subtitle={partnerSection.body}
                 align="left"
               />
-              <Button
-                component={Link}
-                href="/partner-program"
+              <NavButton
+                href={partnerSection.cta.href}
                 variant="contained"
                 color="primary"
                 size="large"
-                endIcon={<ArrowForwardIcon />}
                 sx={{ mt: 2 }}
               >
-                Become a Partner
-              </Button>
+                {partnerSection.cta.label}
+              </NavButton>
             </AnimatedSection>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -39,8 +36,8 @@ export default function PartnerSection() {
               <Box
                 sx={{
                   p: 4,
-                  borderRadius: "16px",
-                  bgcolor: colors.offWhite,
+                  borderRadius: 2,
+                  bgcolor: colors.white,
                   border: `1px solid ${colors.border}`,
                 }}
               >
@@ -56,16 +53,8 @@ export default function PartnerSection() {
                       "&:last-child": { borderBottom: "none" },
                     }}
                   >
-                    <CheckCircleOutlineIcon
-                      sx={{ color: colors.mutedGold, fontSize: 22 }}
-                    />
-                    <Typography
-                      sx={{
-                        color: colors.softCharcoal,
-                        fontWeight: 500,
-                        fontSize: "0.95rem",
-                      }}
-                    >
+                    <CheckCircleOutlineIcon sx={{ color: colors.gold, fontSize: 22 }} />
+                    <Typography sx={{ color: colors.textMuted, fontWeight: 500, fontSize: "0.95rem" }}>
                       {feature}
                     </Typography>
                   </Box>

@@ -4,6 +4,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PageHero from "@/components/ui/PageHero";
 import ContactForm from "@/components/forms/ContactForm";
+import { contactPage } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export const metadata: Metadata = {
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
-      <PageHero title="Let's Build Smarter Business Infrastructure." />
+      <PageHero title={contactPage.headline} />
 
       <Box sx={{ py: { xs: 8, md: 12 } }}>
         <Container maxWidth="lg">
@@ -102,7 +103,7 @@ export default function ContactPage() {
                   border: `1px solid ${colors.border}`,
                 }}
               >
-                <ContactForm />
+                <ContactForm submitLabel={contactPage.formCta} />
               </Box>
             </Grid>
           </Grid>

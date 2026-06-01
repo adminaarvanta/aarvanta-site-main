@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import PageHero from "@/components/ui/PageHero";
-import { aboutValues } from "@/lib/content";
+import { aboutPage, aboutValues } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export const metadata: Metadata = {
@@ -13,55 +13,30 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        title="Building Infrastructure for the AI-Driven Business Era."
-        subtitle="We're building a connected AI ecosystem designed to simplify growth, automate operations, and create scalable business infrastructure for the next generation of companies."
-      />
+      <PageHero title={aboutPage.headline} subtitle={aboutPage.mission} />
 
       <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="md">
-          <Typography
-            sx={{
-              fontSize: { xs: "1.05rem", md: "1.15rem" },
-              lineHeight: 1.9,
-              color: colors.textSecondary,
-              mb: 2,
-            }}
-          >
-            AARVANTA was founded with a simple observation:
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
+          <Typography sx={{ fontSize: { xs: "1.05rem", md: "1.15rem" }, lineHeight: 1.9, color: colors.textMuted, mb: 2 }}>
+            {aboutPage.intro}
           </Typography>
-          <Typography
-            sx={{
-              fontSize: { xs: "1.05rem", md: "1.15rem" },
-              lineHeight: 1.9,
-              color: colors.softCharcoal,
-              mb: 2,
-            }}
-          >
-            Most businesses are overwhelmed by fragmented software, disconnected
-            systems, and inefficient operations.
+          <Typography sx={{ fontSize: { xs: "1.05rem", md: "1.15rem" }, lineHeight: 1.9, color: colors.textDark, mb: 2 }}>
+            {aboutPage.problem}
           </Typography>
-          <Typography
-            sx={{
-              fontSize: { xs: "1.05rem", md: "1.15rem" },
-              lineHeight: 1.9,
-              color: colors.textSecondary,
-            }}
-          >
-            We&apos;re building a connected AI ecosystem designed to simplify
-            growth, automate operations, and create scalable business
-            infrastructure for the next generation of companies.
+          <Typography sx={{ fontSize: { xs: "1.05rem", md: "1.15rem" }, lineHeight: 1.9, color: colors.textMuted }}>
+            {aboutPage.mission}
           </Typography>
         </Container>
       </Box>
 
       <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.white }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
           <Typography
-            variant="h3"
+            component="h2"
+            className="font-serif"
             sx={{
               textAlign: "center",
-              color: colors.deepNavy,
+              color: colors.textDark,
               mb: 6,
               fontSize: { xs: "1.75rem", md: "2.25rem" },
             }}

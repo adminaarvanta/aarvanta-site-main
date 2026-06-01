@@ -57,11 +57,12 @@ export default function Header() {
 
             <Box
               sx={{
-                display: { xs: "none", lg: "flex" },
+                display: { xs: "none", xl: "flex" },
                 alignItems: "center",
-                gap: 0.25,
+                gap: 0,
                 flex: 1,
                 justifyContent: "center",
+                flexWrap: "wrap",
               }}
             >
               {navLinks.map((link) => {
@@ -73,10 +74,10 @@ export default function Header() {
                     href={link.href}
                     sx={{
                       color: active ? colors.gold : colors.textMuted,
-                      fontSize: "0.8rem",
+                      fontSize: "0.72rem",
                       fontWeight: active ? 600 : 500,
-                      letterSpacing: "0.06em",
-                      px: 2,
+                      letterSpacing: "0.04em",
+                      px: 1.25,
                       py: 1,
                       borderRadius: 0,
                       borderBottom: active ? `2px solid ${colors.gold}` : "2px solid transparent",
@@ -95,7 +96,7 @@ export default function Header() {
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Button
                 component={Link}
-                href="/contact"
+                href="/book-demo"
                 variant="contained"
                 color="primary"
                 endIcon={<AddIcon sx={{ fontSize: 16 }} />}
@@ -104,12 +105,13 @@ export default function Header() {
                   fontSize: "0.75rem",
                   py: 1.25,
                   px: 2.5,
+                  whiteSpace: "nowrap",
                 }}
               >
-                Get in Touch
+                Book a Demo
               </Button>
               <IconButton
-                sx={{ display: { lg: "none" }, color: colors.textDark }}
+                sx={{ display: { xl: "none" }, color: colors.textDark }}
                 onClick={() => setMobileOpen(true)}
                 aria-label="Open menu"
               >
@@ -145,8 +147,8 @@ export default function Header() {
             </ListItem>
           ))}
           <ListItem sx={{ px: 2, mt: 2 }}>
-            <Button component={Link} href="/contact" variant="contained" fullWidth>
-              Get in Touch
+            <Button component={Link} href="/book-demo" variant="contained" fullWidth>
+              Book a Demo
             </Button>
           </ListItem>
         </List>

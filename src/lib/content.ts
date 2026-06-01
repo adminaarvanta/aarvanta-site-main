@@ -7,59 +7,106 @@ export const siteConfig = {
 };
 
 export const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Our Products", href: "/products" },
-  { label: "Services", href: "/solutions" },
+  { label: "About", href: "/about" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "Products", href: "/products" },
+  { label: "Industries", href: "/industries" },
+  { label: "Partner Program", href: "/partner-program" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const homeHero = {
+  headline: "AI Infrastructure Built for Real Businesses.",
+  subheadline: siteConfig.description,
+  primaryCta: { label: "Book a Demo", href: "/book-demo" },
+  secondaryCta: { label: "Explore Products", href: "/products" },
+};
+
+export const trustBarText =
+  "Trusted by growing businesses, agencies, consultants, and automation partners globally.";
+
+export const homePositioning = {
+  headline: "More Than AI Tools. Business Infrastructure.",
+  disconnected: [
+    "One platform for CRM.",
+    "Another for communication.",
+    "Another for websites.",
+    "Another for automation.",
+  ],
+  closing:
+    "AARVANTA brings everything together into one intelligent ecosystem designed to scale modern businesses.",
+};
+
+export const uspContent = {
+  headline: "Built As One Connected AI Ecosystem.",
+  intro:
+    "Most AI platforms operate independently. AARVANTA products are designed to communicate with each other seamlessly.",
+  body: "A lead generated through LeadOS can automatically trigger WhatsApp conversations, AI voice calls, CRM workflows, analytics tracking, and conversion funnels — without manual intervention.",
+};
+
+export const partnerSection = {
+  headline: "Build Your Own AI Business Under Your Brand.",
+  body: "AARVANTA's white-label infrastructure allows agencies, consultants, and entrepreneurs to offer advanced AI systems under their own branding while we power the backend technology.",
+  cta: { label: "Become a Partner", href: "/partner-program" },
+};
+
+export const caseStudiesHeadline = "Focused on Outcomes, Not Buzzwords.";
+
+export const globalSection = {
+  headline: "Built in the UK. Designed for Global Scale.",
+  body: "AARVANTA combines global infrastructure, AI systems, automation, and scalable architecture to support businesses and partners across international markets.",
+};
+
+export const pricingSection = {
+  headline: "Flexible for Businesses. Scalable for Partners.",
+  disclaimer: "Custom pricing based on scale and requirements.",
+};
+
+export const finalCta = {
+  headline: "AI Systems Built for Businesses That Intend to Scale.",
+  body: "Whether you're a growing business, agency, or global partner, AARVANTA provides the infrastructure to automate operations, improve communication, and build scalable AI-driven growth systems.",
+  primaryCta: { label: "Book a Demo", href: "/book-demo" },
+  secondaryCta: { label: "Partner With Aarvanta", href: "/partner-program" },
+};
+
+export const aboutPage = {
+  headline: "Building Infrastructure for the AI-Driven Business Era.",
+  intro: "AARVANTA was founded with a simple observation:",
+  problem:
+    "Most businesses are overwhelmed by fragmented software, disconnected systems, and inefficient operations.",
+  mission:
+    "We're building a connected AI ecosystem designed to simplify growth, automate operations, and create scalable business infrastructure for the next generation of companies.",
+};
+
+export const contactPage = {
+  headline: "Let's Build Smarter Business Infrastructure.",
+  formCta: "Schedule a Strategy Call",
+};
+
+export const footerProductLinks = [
+  { label: "LeadOS", href: "/products#leados" },
+  { label: "WhatsAppOS", href: "/products#whatsappos" },
+  { label: "VoiceOS", href: "/products#voiceos" },
+  { label: "SiteOS", href: "/products#siteos" },
+  { label: "CRMOS", href: "/products#crmos" },
+  { label: "ContentOS", href: "/products#contentos" },
+];
+
+export const footerCompanyLinks = [
+  { label: "About", href: "/about" },
+  { label: "Partner Program", href: "/partner-program" },
   { label: "Careers", href: "/careers" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
-export const homeTrustFeatures = [
-  { title: "AI-Powered Innovation", icon: "innovation" },
-  { title: "Secure & Reliable", icon: "secure" },
-  { title: "Scalable Solutions", icon: "scale" },
-  { title: "Dedicated Support", icon: "support" },
-];
-
-export const homeProducts = [
-  {
-    name: "AarvX",
-    subtitle: "AI Assistant",
-    description:
-      "Intelligent virtual assistant to automate tasks, answer queries, and boost productivity.",
-    href: "/products",
-    icon: "assistant",
-  },
-  {
-    name: "Aarv Analytics",
-    subtitle: "",
-    description:
-      "Powerful data analytics platform to gain insights and make informed business decisions.",
-    href: "/products",
-    icon: "analytics",
-  },
-  {
-    name: "Aarv Automate",
-    subtitle: "",
-    description:
-      "Streamline workflows and automate repetitive tasks with our smart automation tools.",
-    href: "/products",
-    icon: "automate",
-  },
-];
-
-export const homeStats = [
-  { value: "3+", label: "Products Launched", icon: "rocket" },
-  { value: "100%", label: "Customer Satisfaction", icon: "star" },
-  { value: "24/7", label: "Support Available", icon: "support" },
-  { value: "∞", label: "Future Ready", icon: "infinity" },
-];
-
-export const aboutChecklist = [
-  "Innovation at the core",
-  "Customer success first",
-  "Technology for a better tomorrow",
+export const footerLegalLinks = [
+  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Terms", href: "/terms" },
+  { label: "GDPR", href: "/gdpr" },
+  { label: "Cookies", href: "/cookies" },
 ];
 
 export const products = [
@@ -291,7 +338,7 @@ export const pricingTiers = [
       "Partner pricing",
       "API access",
       "Multi-client management",
-      "Revenue sharing model",
+      "Recurring revenue model",
     ],
   },
 ];
@@ -406,6 +453,8 @@ export const serviceOptions = [
   "Full Ecosystem",
   "White-Label Partnership",
 ];
+
+export const industryOptions = industries.map((i) => i.title);
 
 export const teamSizeOptions = [
   "1–5",

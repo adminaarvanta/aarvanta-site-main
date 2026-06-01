@@ -3,15 +3,15 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { caseStudies } from "@/lib/content";
+import { caseStudies, caseStudiesHeadline } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function CaseStudiesSection() {
   return (
-    <Box sx={{ py: { xs: 10, md: 14 }, bgcolor: colors.offWhite }}>
-      <Container maxWidth="xl">
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.white }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <AnimatedSection>
-          <SectionHeading title="Focused on Outcomes, Not Buzzwords." />
+          <SectionHeading title={caseStudiesHeadline} />
         </AnimatedSection>
 
         <Grid container spacing={3}>
@@ -30,11 +30,11 @@ export default function CaseStudiesSection() {
                   }}
                 >
                   <Typography
+                    className="font-serif"
                     sx={{
                       fontSize: "2.5rem",
                       fontWeight: 700,
-                      color: colors.mutedGold,
-                      fontFamily: "var(--font-manrope)",
+                      color: colors.gold,
                       mb: 0.5,
                     }}
                   >

@@ -24,10 +24,11 @@ export default function SectionHeading({
       }}
     >
       <Typography
-        variant="h2"
+        component="h2"
+        className="font-serif"
         sx={{
-          fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.75rem" },
-          color: light ? colors.white : colors.deepNavy,
+          fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.5rem" },
+          color: light ? colors.white : colors.textDark,
           mb: subtitle ? 2 : 0,
           lineHeight: 1.2,
         }}
@@ -36,9 +37,8 @@ export default function SectionHeading({
       </Typography>
       {subtitle && (
         <Typography
-          variant="body1"
           sx={{
-            color: light ? "rgba(255,255,255,0.75)" : colors.textSecondary,
+            color: light ? "rgba(255,255,255,0.8)" : colors.textMuted,
             fontSize: { xs: "1rem", md: "1.125rem" },
             lineHeight: 1.7,
           }}

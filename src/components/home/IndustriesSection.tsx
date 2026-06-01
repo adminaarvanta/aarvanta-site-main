@@ -23,8 +23,8 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function IndustriesSection() {
   return (
-    <Box sx={{ py: { xs: 10, md: 14 }, bgcolor: colors.offWhite }}>
-      <Container maxWidth="xl">
+    <Box className="section-cream" sx={{ py: { xs: 8, md: 12 } }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <AnimatedSection>
           <SectionHeading title="Built for High-Growth Businesses." />
         </AnimatedSection>
@@ -42,7 +42,7 @@ export default function IndustriesSection() {
                     border: `1px solid ${colors.border}`,
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      borderColor: colors.deepNavy,
+                      borderColor: colors.gold,
                       transform: "translateY(-2px)",
                     },
                   }}

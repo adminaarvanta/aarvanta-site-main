@@ -16,7 +16,7 @@ import {
 import {
   serviceOptions,
   teamSizeOptions,
-  industries,
+  industryOptions,
 } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
@@ -69,9 +69,9 @@ export default function ContactForm({
           <FormControl fullWidth required>
             <InputLabel>Industry</InputLabel>
             <Select label="Industry" name="industry" defaultValue="">
-              {industries.map((ind) => (
-                <MenuItem key={ind.title} value={ind.title}>
-                  {ind.title}
+              {industryOptions.map((ind) => (
+                <MenuItem key={ind} value={ind}>
+                  {ind}
                 </MenuItem>
               ))}
             </Select>

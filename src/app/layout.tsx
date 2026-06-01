@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollManager from "@/components/layout/ScrollManager";
 import { siteOrigin, withBasePath } from "@/lib/basePath";
 import { siteConfig, seoKeywords } from "@/lib/content";
 import { colors } from "@/lib/theme";
@@ -24,11 +25,10 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
   title: {
-    default: `${siteConfig.name} — Intelligent Solutions. Limitless Possibilities.`,
-    template: `%s | Aarvanta Ltd`,
+    default: `${siteConfig.name} — AI Infrastructure Built for Real Businesses`,
+    template: `%s | ${siteConfig.name}`,
   },
-  description:
-    "Aarvanta Ltd develops AI-powered SaaS products designed to simplify business operations, enhance productivity, and drive innovation.",
+  description: siteConfig.description,
   keywords: seoKeywords,
   icons: {
     icon: withBasePath("/aarvanta-logo.png"),
@@ -50,6 +50,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" style={{ backgroundColor: colors.cream }}>
         <ThemeRegistry>
+          <ScrollManager />
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />

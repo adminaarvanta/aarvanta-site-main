@@ -3,13 +3,14 @@
 import { Box, Container, Grid, Typography, Chip } from "@mui/material";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import NavButton from "@/components/ui/NavButton";
 import { products } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function ProductsSection() {
   return (
-    <Box sx={{ py: { xs: 10, md: 14 }, bgcolor: colors.white }}>
-      <Container maxWidth="xl">
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.white }}>
+      <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <AnimatedSection>
           <SectionHeading title="Products Designed to Work Together." />
         </AnimatedSection>
@@ -22,15 +23,15 @@ export default function ProductsSection() {
                   sx={{
                     p: 4,
                     height: "100%",
-                    borderRadius: "16px",
-                    bgcolor: colors.offWhite,
+                    borderRadius: 2,
+                    bgcolor: colors.cream,
                     border: `1px solid ${colors.border}`,
                     display: "flex",
                     flexDirection: "column",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      borderColor: colors.mutedGold,
-                      boxShadow: "0 16px 48px rgba(15, 23, 41, 0.08)",
+                      borderColor: colors.gold,
+                      boxShadow: "0 16px 48px rgba(42, 36, 24, 0.08)",
                     },
                   }}
                 >
@@ -40,22 +41,22 @@ export default function ProductsSection() {
                     sx={{
                       alignSelf: "flex-start",
                       mb: 2,
-                      bgcolor: colors.deepNavy,
+                      bgcolor: colors.gold,
                       color: colors.white,
                       fontWeight: 600,
                       fontSize: "0.75rem",
                     }}
                   />
                   <Typography
-                    variant="h5"
-                    sx={{ color: colors.deepNavy, mb: 1.5, fontSize: "1.25rem" }}
+                    className="font-serif"
+                    sx={{ color: colors.textDark, mb: 1.5, fontSize: "1.25rem", fontWeight: 600 }}
                   >
                     {product.name}
                   </Typography>
                   <Typography
                     variant="body2"
                     sx={{
-                      color: colors.textSecondary,
+                      color: colors.textMuted,
                       lineHeight: 1.7,
                       mb: 3,
                       flex: 1,
@@ -72,7 +73,7 @@ export default function ProductsSection() {
                         variant="outlined"
                         sx={{
                           borderColor: colors.border,
-                          color: colors.softCharcoal,
+                          color: colors.textMuted,
                           fontSize: "0.75rem",
                         }}
                       />
@@ -83,6 +84,12 @@ export default function ProductsSection() {
             </Grid>
           ))}
         </Grid>
+
+        <Box sx={{ textAlign: "center", mt: 6 }}>
+          <NavButton href="/products" variant="outlined" color="primary" size="large">
+            View All Products
+          </NavButton>
+        </Box>
       </Container>
     </Box>
   );
