@@ -1,13 +1,19 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/ui/LegalPage";
+import { legalLastUpdated, privacySections } from "@/lib/legal-content";
 
-export const metadata: Metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "How Aarvanta Ltd collects, uses, stores, and protects personal data in compliance with UK GDPR and the Data Protection Act 2018.",
+};
 
 export default function PrivacyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      content="AARVANTA LTD is committed to protecting your privacy. This policy outlines how we collect, use, and safeguard personal data in accordance with UK GDPR. Replace this placeholder with your full legal privacy policy before launch."
+      lastUpdated={legalLastUpdated}
+      sections={privacySections}
     />
   );
 }
