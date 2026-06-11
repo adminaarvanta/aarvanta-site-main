@@ -105,8 +105,16 @@ export const footerCompanyLinks = [
 export const footerLegalLinks = [
   { label: "Privacy Policy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "GDPR", href: "/gdpr" },
   { label: "Cookies", href: "/cookies" },
+  { label: "GDPR", href: "/gdpr" },
+  { label: "DPA", href: "/dpa" },
+  { label: "Acceptable Use", href: "/acceptable-use" },
+  { label: "AI Policy", href: "/ai-policy" },
+  { label: "Security", href: "/security" },
+  { label: "Refunds", href: "/refunds" },
+  { label: "Partner Terms", href: "/partner-terms" },
+  { label: "Affiliate Terms", href: "/affiliate-terms" },
+  { label: "Subscription Agreement", href: "/subscription-agreement" },
 ];
 
 export const products = [

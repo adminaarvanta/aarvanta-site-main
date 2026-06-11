@@ -20,6 +20,8 @@ export default function Logo({
 }: LogoProps) {
   const isMark = variant === "mark";
   const src = withBasePath(isMark ? "/aarvanta-logo-mark.png" : "/aarvanta-logo.png");
+  const intrinsicWidth = isMark ? 360 : 1024;
+  const intrinsicHeight = isMark ? 360 : 682;
 
   const displayWidth = isMark ? height : (width ?? 220);
   const displayHeight = isMark ? height : undefined;
@@ -28,8 +30,8 @@ export default function Logo({
     <Image
       src={src}
       alt="AARVANTA LTD"
-      width={1024}
-      height={1024}
+      width={intrinsicWidth}
+      height={intrinsicHeight}
       priority={isMark}
       style={{
         width: displayWidth,

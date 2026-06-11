@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/ui/LegalPage";
+import { legalLastUpdated } from "@/lib/legal-content";
+import { gdprComplianceSections } from "@/lib/legal-policies-content";
 
-export const metadata: Metadata = { title: "GDPR" };
+export const metadata: Metadata = {
+  title: "GDPR Compliance",
+  description:
+    "Aarvanta's commitment to UK GDPR and Data Protection Act 2018 compliance.",
+};
 
 export default function GdprPage() {
   return (
     <LegalPage
-      title="GDPR Compliance"
-      content="AARVANTA LTD processes personal data in compliance with UK GDPR and the Data Protection Act 2018. Replace this placeholder with your full GDPR documentation before launch."
+      title="GDPR Compliance Statement"
+      lastUpdated={legalLastUpdated}
+      sections={gdprComplianceSections}
     />
   );
 }
