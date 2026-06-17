@@ -8,10 +8,12 @@ import {
   footerProductLinks,
   siteConfig,
 } from "@/lib/content";
-import { colors } from "@/lib/theme";
+import { useSiteColors } from "@/lib/color-mode";
 import Logo from "@/components/brand/Logo";
 
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
+  const colors = useSiteColors();
+
   return (
     <Grid size={{ xs: 6, sm: 4, md: 2 }}>
       <Typography sx={{ color: colors.gold, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}>
@@ -29,6 +31,8 @@ function FooterColumn({ title, links }: { title: string; links: { label: string;
 }
 
 export default function Footer() {
+  const colors = useSiteColors();
+
   return (
     <Box
       component="footer"

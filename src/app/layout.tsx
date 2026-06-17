@@ -4,9 +4,9 @@ import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollManager from "@/components/layout/ScrollManager";
+import PreferencesScript from "@/components/layout/PreferencesScript";
 import { siteOrigin, withBasePath } from "@/lib/basePath";
 import { siteConfig, seoKeywords } from "@/lib/content";
-import { colors } from "@/lib/theme";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,8 +47,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col" style={{ backgroundColor: colors.cream }}>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+    >
+      <head>
+        <PreferencesScript />
+      </head>
+      <body className="min-h-full flex flex-col">
         <ThemeRegistry>
           <ScrollManager />
           <Header />
