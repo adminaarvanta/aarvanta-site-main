@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
                     p: 5,
                     height: "100%",
                     borderRadius: "16px",
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                   }}
                 >
@@ -94,7 +94,7 @@ export default function CaseStudiesPage() {
           >
             <Typography
               variant="h5"
-              sx={{ color: colors.deepNavy, mb: 2 }}
+              sx={{ color: colors.textDark, mb: 2 }}
             >
               Ready to achieve similar results?
             </Typography>

@@ -35,7 +35,7 @@ export default function PartnerProgramPage() {
             <Grid size={{ xs: 12, md: 6 }}>
               <Typography
                 variant="h4"
-                sx={{ color: colors.deepNavy, mb: 3, fontSize: "1.75rem" }}
+                sx={{ color: colors.textDark, mb: 3, fontSize: "1.75rem" }}
               >
                 White-Label AI Infrastructure
               </Typography>

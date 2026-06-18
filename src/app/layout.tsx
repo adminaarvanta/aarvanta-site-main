@@ -4,7 +4,6 @@ import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollManager from "@/components/layout/ScrollManager";
-import PreferencesScript from "@/components/layout/PreferencesScript";
 import { siteOrigin, withBasePath } from "@/lib/basePath";
 import { siteConfig, seoKeywords } from "@/lib/content";
 import "./globals.css";
@@ -47,14 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
-    >
-      <head>
-        <PreferencesScript />
-      </head>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <ThemeRegistry>
           <ScrollManager />

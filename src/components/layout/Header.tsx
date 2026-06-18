@@ -19,9 +19,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import AddIcon from "@mui/icons-material/Add";
-import ThemeToggle from "@/components/layout/ThemeToggle";
 import { navLinks } from "@/lib/content";
-import { useSiteColors } from "@/lib/color-mode";
+import { colors } from "@/lib/theme";
 import Logo from "@/components/brand/Logo";
 
 function isActive(pathname: string, href: string) {
@@ -32,7 +31,6 @@ function isActive(pathname: string, href: string) {
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
-  const colors = useSiteColors();
 
   return (
     <>
@@ -95,8 +93,7 @@ export default function Header() {
               })}
             </Box>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-              <ThemeToggle />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Button
                 component={Link}
                 href="/book-demo"
@@ -109,7 +106,6 @@ export default function Header() {
                   py: 1.25,
                   px: 2.5,
                   whiteSpace: "nowrap",
-                  ml: 0.5,
                 }}
               >
                 Book a Demo
@@ -132,8 +128,7 @@ export default function Header() {
         onClose={() => setMobileOpen(false)}
         slotProps={{ paper: { sx: { width: 300, bgcolor: colors.cream } } }}
       >
-        <Box sx={{ p: 2, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-          <ThemeToggle />
+        <Box sx={{ p: 2, display: "flex", justifyContent: "flex-end" }}>
           <IconButton onClick={() => setMobileOpen(false)} aria-label="Close menu">
             <CloseIcon />
           </IconButton>

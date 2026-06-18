@@ -29,7 +29,7 @@ export default function AboutPage() {
         </Container>
       </Box>
 
-      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.white }}>
+      <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.offWhite }}>
         <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
           <Typography
             component="h2"
@@ -56,7 +56,7 @@ export default function AboutPage() {
                 >
                   <Typography
                     variant="h5"
-                    sx={{ color: colors.deepNavy, mb: 2 }}
+                    sx={{ color: colors.textDark, mb: 2 }}
                   >
                     {value.title}
                   </Typography>

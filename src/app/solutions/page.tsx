@@ -28,13 +28,13 @@ export default function SolutionsPage() {
                     p: 4,
                     height: "100%",
                     borderRadius: "16px",
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                   }}
                 >
                   <Typography
                     variant="h5"
-                    sx={{ color: colors.deepNavy, mb: 2 }}
+                    sx={{ color: colors.textDark, mb: 2 }}
                   >
                     {solution.title}
                   </Typography>
@@ -67,7 +67,7 @@ export default function SolutionsPage() {
                     py: 1.5,
                     borderRadius: "8px",
                     bgcolor: i === 0 ? colors.mutedGold : "rgba(255,255,255,0.08)",
-                    color: i === 0 ? colors.deepNavy : colors.white,
+                    color: i === 0 ? colors.cream : colors.white,
                     fontWeight: 600,
                     display: "inline-block",
                   }}

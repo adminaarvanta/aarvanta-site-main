@@ -55,7 +55,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             sx={{
               mb: 2,
               bgcolor: colors.mutedGold,
-              color: colors.deepNavy,
+              color: colors.cream,
               fontWeight: 600,
             }}
           />

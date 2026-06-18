@@ -9,7 +9,7 @@ import { colors } from "@/lib/theme";
 
 export default function ProductsSection() {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.white }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.offWhite }}>
       <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <AnimatedSection>
           <SectionHeading title="Products Designed to Work Together." />

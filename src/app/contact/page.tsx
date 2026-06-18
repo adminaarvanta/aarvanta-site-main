@@ -24,7 +24,7 @@ export default function ContactPage() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 variant="h4"
-                sx={{ color: colors.deepNavy, mb: 3, fontSize: "1.5rem" }}
+                sx={{ color: colors.textDark, mb: 3, fontSize: "1.5rem" }}
               >
                 Get in Touch
               </Typography>
@@ -43,13 +43,13 @@ export default function ContactPage() {
                       width: 44,
                       height: 44,
                       borderRadius: "10px",
-                      bgcolor: "rgba(15, 23, 41, 0.06)",
+                      bgcolor: colors.iconBg,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <EmailIcon sx={{ color: colors.deepNavy }} />
+                    <EmailIcon sx={{ color: colors.textDark }} />
                   </Box>
                   <Box>
                     <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
@@ -61,7 +61,7 @@ export default function ContactPage() {
                       sx={{
                         color: colors.textSecondary,
                         textDecoration: "none",
-                        "&:hover": { color: colors.deepNavy },
+                        "&:hover": { color: colors.textDark },
                       }}
                     >
                       hello@aarvanta.com
@@ -74,13 +74,13 @@ export default function ContactPage() {
                       width: 44,
                       height: 44,
                       borderRadius: "10px",
-                      bgcolor: "rgba(15, 23, 41, 0.06)",
+                      bgcolor: colors.iconBg,
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <LocationOnIcon sx={{ color: colors.deepNavy }} />
+                    <LocationOnIcon sx={{ color: colors.textDark }} />
                   </Box>
                   <Box>
                     <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                 sx={{
                   p: { xs: 3, md: 5 },
                   borderRadius: "16px",
-                  bgcolor: colors.white,
+                  bgcolor: colors.offWhite,
                   border: `1px solid ${colors.border}`,
                 }}
               >

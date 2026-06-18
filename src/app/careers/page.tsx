@@ -40,7 +40,7 @@ export default function CareersPage() {
             sx={{
               p: { xs: 4, md: 5 },
               borderRadius: 2,
-              bgcolor: colors.white,
+              bgcolor: colors.offWhite,
               border: `1px solid ${colors.border}`,
               maxWidth: 560,
             }}

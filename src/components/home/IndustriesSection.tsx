@@ -38,7 +38,7 @@ export default function IndustriesSection() {
                     p: 4,
                     height: "100%",
                     borderRadius: "16px",
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                     transition: "all 0.3s ease",
                     "&:hover": {
@@ -64,7 +64,7 @@ export default function IndustriesSection() {
                   </Box>
                   <Typography
                     variant="h6"
-                    sx={{ color: colors.deepNavy, mb: 1, fontSize: "1.1rem" }}
+                    sx={{ color: colors.textDark, mb: 1, fontSize: "1.1rem" }}
                   >
                     {industry.title}
                   </Typography>

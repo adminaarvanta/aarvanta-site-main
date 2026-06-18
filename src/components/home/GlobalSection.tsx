@@ -12,7 +12,7 @@ export default function GlobalSection() {
     <Box
       sx={{
         py: { xs: 8, md: 10 },
-        bgcolor: colors.white,
+        bgcolor: colors.offWhite,
         borderTop: `1px solid ${colors.border}`,
         borderBottom: `1px solid ${colors.border}`,
       }}

@@ -12,7 +12,7 @@ export default function UspSection() {
     <Box
       sx={{
         py: { xs: 8, md: 12 },
-        bgcolor: colors.textDark,
+        bgcolor: colors.deepNavy,
         position: "relative",
         overflow: "hidden",
       }}

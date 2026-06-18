@@ -20,7 +20,7 @@ export default function PricingTierCard({ tier }: { tier: PricingTier }) {
         p: 4,
         height: "100%",
         borderRadius: 2,
-        bgcolor: highlighted ? colors.textDark : colors.white,
+        bgcolor: highlighted ? colors.deepNavy : colors.offWhite,
         border: highlighted ? `2px solid ${colors.gold}` : `1px solid ${colors.border}`,
         boxShadow: highlighted ? "0 20px 60px rgba(42, 36, 24, 0.15)" : "none",
         display: "flex",

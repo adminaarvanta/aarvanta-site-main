@@ -37,7 +37,7 @@ export default function PartnerSection() {
                 sx={{
                   p: 4,
                   borderRadius: 2,
-                  bgcolor: colors.white,
+                  bgcolor: colors.offWhite,
                   border: `1px solid ${colors.border}`,
                 }}
               >

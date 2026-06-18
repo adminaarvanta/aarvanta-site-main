@@ -71,7 +71,7 @@ export default function PositioningSection() {
                     p: 3.5,
                     height: "100%",
                     borderRadius: 2,
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                     transition: "all 0.3s ease",
                     "&:hover": {

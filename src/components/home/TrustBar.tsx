@@ -7,7 +7,7 @@ export default function TrustBar() {
     <Box
       sx={{
         py: { xs: 4, md: 5 },
-        bgcolor: colors.white,
+        bgcolor: colors.offWhite,
         borderTop: `1px solid ${colors.border}`,
         borderBottom: `1px solid ${colors.border}`,
       }}

@@ -7,7 +7,7 @@ const modules = [
   { label: "LeadOS", x: 10, y: 15, color: colors.mutedGold },
   { label: "CRMOS", x: 55, y: 8, color: colors.navyLight },
   { label: "WhatsAppOS", x: 75, y: 35, color: "#25D366" },
-  { label: "VoiceOS", x: 15, y: 55, color: colors.deepNavy },
+  { label: "VoiceOS", x: 15, y: 55, color: colors.textDark },
   { label: "SiteOS", x: 45, y: 50, color: colors.mutedGold },
   { label: "Analytics", x: 70, y: 70, color: colors.navyLight },
 ];
@@ -28,7 +28,7 @@ export default function HeroVisual() {
           position: "absolute",
           inset: 0,
           borderRadius: "20px",
-          background: `linear-gradient(145deg, ${colors.white} 0%, ${colors.offWhite} 100%)`,
+          background: `linear-gradient(145deg, ${colors.offWhite} 0%, ${colors.cream} 100%)`,
           border: `1px solid ${colors.border}`,
           boxShadow: "0 20px 60px rgba(15, 23, 41, 0.12)",
           overflow: "hidden",
@@ -80,7 +80,7 @@ export default function HeroVisual() {
                   flex: 1,
                   p: 1.5,
                   borderRadius: "10px",
-                  bgcolor: colors.white,
+                  bgcolor: colors.offWhite,
                   border: `1px solid ${colors.border}`,
                 }}
               >
@@ -93,7 +93,7 @@ export default function HeroVisual() {
                   sx={{
                     fontSize: "1rem",
                     fontWeight: 700,
-                    color: colors.deepNavy,
+                    color: colors.textDark,
                     fontFamily: "var(--font-manrope)",
                   }}
                 >
@@ -149,7 +149,7 @@ export default function HeroVisual() {
                   px: 1.5,
                   py: 0.75,
                   borderRadius: "8px",
-                  bgcolor: colors.white,
+                  bgcolor: colors.offWhite,
                   border: `1.5px solid ${mod.color}`,
                   boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
                 }}
@@ -158,7 +158,7 @@ export default function HeroVisual() {
                   sx={{
                     fontSize: "0.7rem",
                     fontWeight: 600,
-                    color: colors.deepNavy,
+                    color: colors.textDark,
                     fontFamily: "var(--font-manrope)",
                     whiteSpace: "nowrap",
                   }}

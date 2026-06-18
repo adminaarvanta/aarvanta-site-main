@@ -8,7 +8,7 @@ import { colors } from "@/lib/theme";
 
 export default function CaseStudiesSection() {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.white }}>
+    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: colors.offWhite }}>
       <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <AnimatedSection>
           <SectionHeading title={caseStudiesHeadline} />
@@ -23,7 +23,7 @@ export default function CaseStudiesSection() {
                     p: 4,
                     height: "100%",
                     borderRadius: "16px",
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                     display: "flex",
                     flexDirection: "column",

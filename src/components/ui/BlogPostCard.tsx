@@ -27,7 +27,7 @@ export default function BlogPostCard({
           p: 4,
           height: "100%",
           borderRadius: "16px",
-          bgcolor: colors.white,
+          bgcolor: colors.offWhite,
           border: `1px solid ${colors.border}`,
           transition: "all 0.3s ease",
           "&:hover": {
@@ -42,8 +42,8 @@ export default function BlogPostCard({
             label={category}
             size="small"
             sx={{
-              bgcolor: "rgba(15, 23, 41, 0.06)",
-              color: colors.deepNavy,
+              bgcolor: colors.iconBg,
+              color: colors.textDark,
               fontWeight: 600,
               fontSize: "0.75rem",
             }}
@@ -59,7 +59,7 @@ export default function BlogPostCard({
         <Typography
           variant="h5"
           sx={{
-            color: colors.deepNavy,
+            color: colors.textDark,
             mb: 2,
             fontSize: "1.25rem",
             lineHeight: 1.4,

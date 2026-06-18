@@ -29,13 +29,13 @@ export default function IndustriesPage() {
                     p: 4,
                     height: "100%",
                     borderRadius: "16px",
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                   }}
                 >
                   <Typography
                     variant="h5"
-                    sx={{ color: colors.deepNavy, mb: 2 }}
+                    sx={{ color: colors.textDark, mb: 2 }}
                   >
                     {industry.title}
                   </Typography>

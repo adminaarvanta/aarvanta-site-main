@@ -30,7 +30,7 @@ export default function ProductsPage() {
                     p: 5,
                     height: "100%",
                     borderRadius: "16px",
-                    bgcolor: colors.white,
+                    bgcolor: colors.offWhite,
                     border: `1px solid ${colors.border}`,
                     scrollMarginTop: 100,
                   }}
@@ -39,14 +39,14 @@ export default function ProductsPage() {
                     label={product.shortName}
                     sx={{
                       mb: 2,
-                      bgcolor: colors.deepNavy,
-                      color: colors.white,
+                      bgcolor: colors.gold,
+                      color: colors.cream,
                       fontWeight: 600,
                     }}
                   />
                   <Typography
                     variant="h4"
-                    sx={{ color: colors.deepNavy, mb: 2, fontSize: "1.5rem" }}
+                    sx={{ color: colors.textDark, mb: 2, fontSize: "1.5rem" }}
                   >
                     {product.name}
                   </Typography>

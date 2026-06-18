@@ -32,7 +32,7 @@ export default function BookDemoPage() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Typography
                 variant="h4"
-                sx={{ color: colors.deepNavy, mb: 3, fontSize: "1.5rem" }}
+                sx={{ color: colors.textDark, mb: 3, fontSize: "1.5rem" }}
               >
                 What to Expect
               </Typography>
@@ -56,13 +56,13 @@ export default function BookDemoPage() {
                 sx={{
                   p: { xs: 3, md: 5 },
                   borderRadius: "16px",
-                  bgcolor: colors.white,
+                  bgcolor: colors.offWhite,
                   border: `1px solid ${colors.border}`,
                 }}
               >
                 <Typography
                   variant="h5"
-                  sx={{ color: colors.deepNavy, mb: 3 }}
+                  sx={{ color: colors.textDark, mb: 3 }}
                 >
                   Schedule Your Demo
                 </Typography>
