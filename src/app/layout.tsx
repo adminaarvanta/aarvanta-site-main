@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [withBasePath("/aarvanta-logo.png")],
   },
+  other: {
+    "facebook-domain-verification": "cjpw9pc8dqex6t8kkk2dtlu9s6o9ks",
+  },
 };
 
 export default function RootLayout({
