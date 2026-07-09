@@ -1,32 +1,92 @@
 export const siteConfig = {
-  name: "AARVANTA LTD",
-  tagline: "Premium UK-Based AI Infrastructure Company",
+  name: "AARVANTA",
+  tagline: "The Business OS for a Connected World",
   description:
-    "AARVANTA builds scalable AI systems for businesses, agencies, and global partners — combining automation, communication, lead generation, voice AI, and operational infrastructure into one connected ecosystem.",
+    "AARVANTA unifies operations, finance, CRM, HR, inventory, and AI automation into one intelligent platform — built to run, grow, and transform your entire business.",
   url: "https://aarvanta.com",
 };
 
-export const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "Products", href: "/products" },
-  { label: "Industries", href: "/industries" },
-  { label: "Partner Program", href: "/partner-program" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
-
-export const homeHero = {
-  headline: "AI Infrastructure Built for Real Businesses.",
-  subheadline: siteConfig.description,
-  primaryCta: { label: "Book a Demo", href: "/book-demo" },
-  secondaryCta: { label: "Explore Products", href: "/products" },
+export type NavLink = {
+  label: string;
+  href: string;
+  hasDropdown?: boolean;
 };
 
-export const trustBarText =
-  "Trusted by growing businesses, agencies, consultants, and automation partners globally.";
+/** @deprecated Use primaryNav from site-navigation.ts */
+export const navLinks: NavLink[] = [];
+
+export const homeHero = {
+  badge: "The Business OS for a Connected World",
+  headline: "Run. Grow. Transform.",
+  headlineAccent: "All in One Place.",
+  subheadline:
+    "Aarvanta unifies every part of your business—from operations and teams to customers and growth—so you can focus on what truly matters.",
+  primaryCta: { label: "Explore Platform", href: "/platform" },
+  secondaryCta: { label: "How It Works", href: "/business-os" },
+};
+
+export const orbitProducts = [] as never[];
+
+export const platformModules = {
+  headline: "One Platform. Endless Possibilities.",
+  subheadline:
+    "Powerful modules, seamless integrations, and intelligent automation working together.",
+  modules: [] as { title: string; description: string; color: string; href: string }[],
+};
+
+export const platformStats = [
+  {
+    value: "14,250+",
+    label: "Businesses on Aarvanta",
+    detail: "Across 120+ Countries",
+  },
+  {
+    value: "2.8M+",
+    label: "Processes Automated",
+    detail: "+ 32% this month",
+    detailColor: "success" as const,
+  },
+  {
+    value: "12.5M+",
+    label: "Time Saved",
+    detail: "Hours across all businesses",
+  },
+];
+
+export const brandingPillars = [
+  {
+    title: "GLOBAL",
+    description: "Built for businesses around the world.",
+    icon: "globe" as const,
+  },
+  {
+    title: "INTELLIGENT",
+    description: "AI-powered automation that drives growth.",
+    icon: "chip" as const,
+  },
+  {
+    title: "SECURE",
+    description: "Enterprise-grade security you can trust.",
+    icon: "shield" as const,
+  },
+  {
+    title: "SCALABLE",
+    description: "Designed to grow with your ambition.",
+    icon: "chart" as const,
+  },
+];
+
+export const trustLogos = [
+  "Dubai",
+  "NHS",
+  "EMAAR",
+  "UNICEF",
+  "IESE",
+  "Accenture",
+  "Greenpeace",
+];
+
+export const trustBarText = "Trusted by businesses worldwide";
 
 export const homePositioning = {
   headline: "More Than AI Tools. Business Infrastructure.",
@@ -50,7 +110,7 @@ export const uspContent = {
 export const partnerSection = {
   headline: "Build Your Own AI Business Under Your Brand.",
   body: "AARVANTA's white-label infrastructure allows agencies, consultants, and entrepreneurs to offer advanced AI systems under their own branding while we power the backend technology.",
-  cta: { label: "Become a Partner", href: "/partner-program" },
+  cta: { label: "Become a Partner", href: "/partners/apply" },
 };
 
 export const caseStudiesHeadline = "Focused on Outcomes, Not Buzzwords.";
@@ -66,10 +126,10 @@ export const pricingSection = {
 };
 
 export const finalCta = {
-  headline: "AI Systems Built for Businesses That Intend to Scale.",
-  body: "Whether you're a growing business, agency, or global partner, AARVANTA provides the infrastructure to automate operations, improve communication, and build scalable AI-driven growth systems.",
-  primaryCta: { label: "Book a Demo", href: "/book-demo" },
-  secondaryCta: { label: "Partner With Aarvanta", href: "/partner-program" },
+  headline: "Ready to Run Your Business in One Place?",
+  body: "Join thousands of businesses worldwide using AARVANTA to automate operations, unify teams, and scale with confidence.",
+  primaryCta: { label: "Start Free", href: "/book-demo" },
+  secondaryCta: { label: "Book a Demo", href: "/book-demo" },
 };
 
 export const aboutPage = {
@@ -97,7 +157,7 @@ export const footerProductLinks = [
 
 export const footerCompanyLinks = [
   { label: "About", href: "/about" },
-  { label: "Partner Program", href: "/partner-program" },
+  { label: "Partner Program", href: "/partners" },
   { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];

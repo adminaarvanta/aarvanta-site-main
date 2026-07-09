@@ -2,19 +2,15 @@
 
 import Link from "next/link";
 import { Box, Container, Divider, Grid, Typography } from "@mui/material";
-import {
-  footerCompanyLinks,
-  footerLegalLinks,
-  footerProductLinks,
-  siteConfig,
-} from "@/lib/content";
+import { footerLegalLinks, siteConfig } from "@/lib/content";
+import { footerNav } from "@/lib/site-navigation";
 import { colors } from "@/lib/theme";
 import Logo from "@/components/brand/Logo";
 
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <Grid size={{ xs: 6, sm: 4, md: 2 }}>
-      <Typography sx={{ color: colors.gold, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}>
+      <Typography sx={{ color: colors.primary, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}>
         {title}
       </Typography>
       {links.map((link) => (
@@ -43,15 +39,17 @@ export default function Footer() {
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ maxWidth: { xs: 280, sm: 320, md: 300 }, mb: 2 }}>
-              <Logo variant="full" width={280} href="/" />
+              <Logo variant="full" width={200} href="/" />
             </Box>
-            <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.7, maxWidth: 280 }}>
-              {siteConfig.tagline}. {siteConfig.description.slice(0, 120)}…
+            <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.7, maxWidth: 320 }}>
+              {siteConfig.tagline}. {siteConfig.description.slice(0, 140)}…
             </Typography>
           </Grid>
 
-          <FooterColumn title="Products" links={footerProductLinks} />
-          <FooterColumn title="Company" links={footerCompanyLinks} />
+          <FooterColumn title="Products" links={footerNav.products} />
+          <FooterColumn title="Platform" links={footerNav.platform} />
+          <FooterColumn title="Resources" links={footerNav.resources} />
+          <FooterColumn title="Company" links={footerNav.company} />
           <FooterColumn title="Legal" links={footerLegalLinks} />
         </Grid>
 

@@ -30,8 +30,8 @@ export default function ProductsSection() {
                     flexDirection: "column",
                     transition: "all 0.3s ease",
                     "&:hover": {
-                      borderColor: colors.gold,
-                      boxShadow: "0 16px 48px rgba(42, 36, 24, 0.08)",
+                      borderColor: colors.primary,
+                      boxShadow: "0 16px 48px rgba(29, 78, 216, 0.1)",
                     },
                   }}
                 >
@@ -41,7 +41,7 @@ export default function ProductsSection() {
                     sx={{
                       alignSelf: "flex-start",
                       mb: 2,
-                      bgcolor: colors.gold,
+                      bgcolor: colors.primary,
                       color: colors.white,
                       fontWeight: 600,
                       fontSize: "0.75rem",
@@ -86,8 +86,8 @@ export default function ProductsSection() {
         </Grid>
 
         <Box sx={{ textAlign: "center", mt: 6 }}>
-          <NavButton href="/products" variant="outlined" color="primary" size="large">
-            View All Products
+          <NavButton href="/business-os" variant="outlined" color="primary" size="large">
+            View Business OS
           </NavButton>
         </Box>
       </Container>

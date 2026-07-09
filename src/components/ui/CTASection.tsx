@@ -19,7 +19,7 @@ export default function CTASection({
   primaryLabel = "Book a Demo",
   primaryHref = "/book-demo",
   secondaryLabel = "Partner With Aarvanta",
-  secondaryHref = "/partner-program",
+  secondaryHref = "/partners",
 }: CTASectionProps) {
   return (
     <Box

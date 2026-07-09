@@ -3,20 +3,20 @@ import { colors } from "./theme-colors";
 
 const theme = createTheme({
   palette: {
-    mode: "dark",
+    mode: "light",
     primary: {
-      main: colors.gold,
-      dark: colors.goldDark,
-      light: colors.goldLight,
+      main: colors.primary,
+      dark: colors.primaryDark,
+      light: colors.primaryLight,
       contrastText: colors.white,
     },
     secondary: {
-      main: colors.textDark,
-      contrastText: colors.cream,
+      main: colors.deepNavy,
+      contrastText: colors.white,
     },
     background: {
-      default: colors.cream,
-      paper: colors.offWhite,
+      default: colors.offWhite,
+      paper: colors.cream,
     },
     text: {
       primary: colors.textDark,
@@ -27,20 +27,17 @@ const theme = createTheme({
   typography: {
     fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
     h1: {
-      fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
-      fontWeight: 600,
-      letterSpacing: "-0.01em",
+      fontWeight: 700,
+      letterSpacing: "-0.02em",
       color: colors.textDark,
     },
     h2: {
-      fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
-      fontWeight: 600,
-      letterSpacing: "-0.01em",
+      fontWeight: 700,
+      letterSpacing: "-0.02em",
       color: colors.textDark,
     },
     h3: {
-      fontFamily: "var(--font-playfair), 'Playfair Display', Georgia, serif",
-      fontWeight: 600,
+      fontWeight: 700,
       color: colors.textDark,
     },
     h4: { fontWeight: 600, color: colors.textDark },
@@ -48,7 +45,7 @@ const theme = createTheme({
       fontFamily: "var(--font-inter), Inter, sans-serif",
       fontWeight: 600,
       textTransform: "none",
-      letterSpacing: "0.04em",
+      letterSpacing: "0.02em",
     },
   },
   shape: { borderRadius: 12 },
@@ -56,32 +53,33 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: 6,
-          padding: "14px 32px",
-          fontSize: "0.8rem",
+          borderRadius: 10,
+          padding: "12px 24px",
+          fontSize: "0.875rem",
         },
       },
       variants: [
         {
           props: { variant: "contained", color: "primary" },
           style: {
-            background: `linear-gradient(180deg, ${colors.goldLight} 0%, ${colors.gold} 100%)`,
-            boxShadow: "0 4px 16px rgba(194, 155, 64, 0.35)",
+            background: `linear-gradient(180deg, ${colors.primaryLight} 0%, ${colors.primary} 100%)`,
+            boxShadow: "0 4px 16px rgba(29, 78, 216, 0.25)",
             color: colors.white,
             "&:hover": {
-              background: `linear-gradient(180deg, ${colors.gold} 0%, ${colors.goldDark} 100%)`,
+              background: `linear-gradient(180deg, ${colors.primary} 0%, ${colors.primaryDark} 100%)`,
             },
           },
         },
         {
           props: { variant: "outlined", color: "primary" },
           style: {
-            borderColor: colors.gold,
+            borderColor: colors.border,
             borderWidth: 1.5,
-            color: colors.gold,
+            color: colors.textDark,
             "&:hover": {
               borderWidth: 1.5,
-              backgroundColor: "rgba(194, 155, 64, 0.08)",
+              borderColor: colors.primary,
+              backgroundColor: "rgba(29, 78, 216, 0.04)",
             },
           },
         },

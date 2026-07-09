@@ -3,6 +3,8 @@ import { Inter, Playfair_Display } from "next/font/google";
 import ThemeRegistry from "@/components/layout/ThemeRegistry";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SiteShell from "@/components/layout/SiteShell";
+import ChatFab from "@/components/layout/ChatFab";
 import ScrollManager from "@/components/layout/ScrollManager";
 import { siteOrigin, withBasePath } from "@/lib/basePath";
 import { siteConfig, seoKeywords } from "@/lib/content";
@@ -24,7 +26,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
   title: {
-    default: `${siteConfig.name} — AI Infrastructure Built for Real Businesses`,
+    default: `${siteConfig.name} — The Business OS for a Connected World`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -54,8 +56,11 @@ export default function RootLayout({
         <ThemeRegistry>
           <ScrollManager />
           <Header />
-          <main className="flex-1">{children}</main>
+          <SiteShell>
+            <main className="flex-1">{children}</main>
+          </SiteShell>
           <Footer />
+          <ChatFab />
         </ThemeRegistry>
       </body>
     </html>
