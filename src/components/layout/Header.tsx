@@ -154,7 +154,7 @@ export default function Header() {
               maxWidth: 1440,
             }}
           >
-            <Logo variant="wordmark" height={36} />
+            <Logo variant="wordmark" height={40} />
 
             <Box
               sx={{

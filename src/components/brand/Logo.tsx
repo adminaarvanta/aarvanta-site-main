@@ -10,8 +10,11 @@ type LogoProps = {
   height?: number;
   width?: number;
   href?: string | null;
-  variant?: "full" | "mark" | "wordmark";
+  variant?: "full" | "mark" | "wordmark" | "hero";
 };
+
+const MARK_SRC = "/aarvanta-logo-header-mark.png";
+const FULL_SRC = "/aarvanta-logo.png";
 
 export default function Logo({
   height = 44,
@@ -20,37 +23,37 @@ export default function Logo({
   variant = "full",
 }: LogoProps) {
   if (variant === "wordmark") {
+    const markSize = height * 1.05;
     const content = (
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1.25 }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
         <Box
           sx={{
-            width: height * 0.85,
-            height: height * 0.85,
-            borderRadius: 2,
-            bgcolor: colors.primary,
+            width: markSize,
+            height: markSize,
+            flexShrink: 0,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            flexShrink: 0,
           }}
         >
-          <Typography
-            sx={{
-              color: colors.white,
-              fontWeight: 800,
-              fontSize: height * 0.45,
-              lineHeight: 1,
-              fontStyle: "italic",
+          <Image
+            src={withBasePath(MARK_SRC)}
+            alt=""
+            width={256}
+            height={256}
+            priority
+            style={{
+              width: markSize,
+              height: markSize,
+              objectFit: "contain",
             }}
-          >
-            A
-          </Typography>
+          />
         </Box>
         <Typography
           sx={{
             fontWeight: 800,
-            fontSize: height * 0.42,
-            letterSpacing: "0.06em",
+            fontSize: height * 0.48,
+            letterSpacing: "0.05em",
             color: colors.textDark,
             lineHeight: 1,
           }}
@@ -68,10 +71,44 @@ export default function Logo({
     );
   }
 
+  if (variant === "hero") {
+    const size = height;
+    const image = (
+      <Box
+        sx={{
+          width: size,
+          height: size,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <Image
+          src={withBasePath(MARK_SRC)}
+          alt="Aarvanta"
+          width={256}
+          height={256}
+          priority
+          style={{
+            width: size * 0.88,
+            height: size * 0.88,
+            objectFit: "contain",
+            filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.25))",
+          }}
+        />
+      </Box>
+    );
+    if (href === null) return image;
+    return (
+      <Link href={href} style={{ textDecoration: "none", display: "inline-flex", lineHeight: 0 }}>
+        {image}
+      </Link>
+    );
+  }
+
   const isMark = variant === "mark";
-  const src = withBasePath(isMark ? "/aarvanta-logo-mark.png" : "/aarvanta-logo.png");
-  const intrinsicWidth = isMark ? 720 : 1024;
-  const intrinsicHeight = isMark ? 512 : 1024;
+  const src = withBasePath(isMark ? MARK_SRC : FULL_SRC);
+  const intrinsicSize = isMark ? 256 : 1024;
 
   const displayWidth = isMark ? height : (width ?? 220);
   const displayHeight = isMark ? height : undefined;
@@ -80,8 +117,8 @@ export default function Logo({
     <Image
       src={src}
       alt="AARVANTA"
-      width={intrinsicWidth}
-      height={intrinsicHeight}
+      width={intrinsicSize}
+      height={intrinsicSize}
       priority={isMark}
       style={{
         width: displayWidth,

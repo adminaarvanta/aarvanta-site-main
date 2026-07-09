@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Box, Chip, Typography } from "@mui/material";
-import Image from "next/image";
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
@@ -14,7 +13,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import GridViewOutlinedIcon from "@mui/icons-material/GridViewOutlined";
 import { aiWorkforceBadge, orbitCards } from "@/lib/site-navigation";
 import { colors } from "@/lib/theme";
-import { withBasePath } from "@/lib/basePath";
+import Logo from "@/components/brand/Logo";
 
 const RING_SIZE = 420;
 
@@ -89,24 +88,18 @@ export default function HeroOrbitVisual() {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 112,
-          height: 112,
+          width: 148,
+          height: 148,
           borderRadius: "50%",
-          background: `radial-gradient(circle at 30% 30%, ${colors.primaryLight}, ${colors.primary} 55%, ${colors.primaryDark})`,
-          boxShadow: "0 12px 40px rgba(29, 78, 216, 0.35), inset 0 2px 8px rgba(255,255,255,0.25)",
+          background: `radial-gradient(circle at 32% 28%, ${colors.primaryLight}, ${colors.primary} 52%, ${colors.primaryDark})`,
+          boxShadow: "0 16px 48px rgba(29, 78, 216, 0.38), inset 0 2px 10px rgba(255,255,255,0.28)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           zIndex: 3,
         }}
       >
-        <Image
-          src={withBasePath("/aarvanta-logo-mark.png")}
-          alt="Aarvanta"
-          width={64}
-          height={64}
-          style={{ objectFit: "contain" }}
-        />
+        <Logo variant="hero" height={96} href={null} />
       </Box>
 
       {orbitCards.map((product) => {
