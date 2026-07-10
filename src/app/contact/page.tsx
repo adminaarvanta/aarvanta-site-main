@@ -57,14 +57,14 @@ export default function ContactPage() {
                     </Typography>
                     <Typography
                       component="a"
-                      href="mailto:hello@aarvanta.com"
+                      href="mailto:admin@aarvanta.co"
                       sx={{
                         color: colors.textSecondary,
                         textDecoration: "none",
                         "&:hover": { color: colors.textDark },
                       }}
                     >
-                      hello@aarvanta.com
+                      admin@aarvanta.co
                     </Typography>
                   </Box>
                 </Box>

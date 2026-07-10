@@ -54,10 +54,10 @@ export default function CareersPage() {
             <Typography sx={{ color: colors.textMuted, lineHeight: 1.8, mb: 3 }}>
               Email{" "}
               <Link
-                href="mailto:careers@aarvanta.com"
+                href="mailto:hr@aarvanta.co"
                 style={{ color: colors.gold, textDecoration: "none" }}
               >
-                careers@aarvanta.com
+                hr@aarvanta.co
               </Link>{" "}
               with your portfolio or LinkedIn profile.
             </Typography>
