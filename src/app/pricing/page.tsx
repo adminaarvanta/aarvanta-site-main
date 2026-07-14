@@ -8,16 +8,15 @@ import { colors } from "@/lib/theme";
 
 export const metadata: Metadata = {
   title: "Pricing",
-  description:
-    "Flexible AI infrastructure pricing for businesses and partners. Custom pricing based on scale and requirements.",
+  description: "Simple, transparent pricing. Starter £99, Growth £299, Business £699, Enterprise custom.",
 };
 
 export default function PricingPage() {
   return (
     <>
       <PageHero
-        title="Flexible for Businesses. Scalable for Partners."
-        subtitle="Custom pricing based on scale and requirements."
+        title="Simple. Transparent."
+        subtitle="No credit card required. 15-day free trial on every plan."
       />
 
       <Box sx={{ py: { xs: 8, md: 12 } }}>

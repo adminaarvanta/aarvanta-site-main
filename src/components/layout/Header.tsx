@@ -204,7 +204,7 @@ export default function Header() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Book Demo
+                Book Live Demo
               </Button>
               <Button
                 component={Link}
@@ -220,7 +220,7 @@ export default function Header() {
                   whiteSpace: "nowrap",
                 }}
               >
-                Start Free
+                Start Free Trial
               </Button>
               <IconButton
                 sx={{ display: { lg: "none" }, color: colors.textDark }}
@@ -278,10 +278,10 @@ export default function Header() {
           ))}
           <ListItem sx={{ px: 2, mt: 2, display: "flex", flexDirection: "column", gap: 1 }}>
             <Button component={Link} href="/book-demo" variant="outlined" fullWidth>
-              Book Demo
+              Book Live Demo
             </Button>
             <Button component={Link} href="/book-demo" variant="contained" fullWidth>
-              Start Free
+              Start Free Trial
             </Button>
           </ListItem>
         </List>

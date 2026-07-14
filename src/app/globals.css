@@ -70,6 +70,26 @@ html {
   }
 }
 
+@keyframes flowPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: translateX(0);
+  }
+  40%,
+  60% {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+}
+
 .orbit-card {
   animation: float-card 5s ease-in-out infinite;
+}
+
+@media (max-width: 600px) {
+  .flow-step {
+    animation: none !important;
+    opacity: 1 !important;
+  }
 }

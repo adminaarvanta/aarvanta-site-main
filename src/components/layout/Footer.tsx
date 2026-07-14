@@ -37,20 +37,40 @@ export default function Footer() {
     >
       <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
         <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <Box sx={{ maxWidth: { xs: 280, sm: 320, md: 300 }, mb: 2 }}>
-              <Logo variant="full" width={200} href="/" />
+          <Grid size={{ xs: 12, md: 3 }}>
+            <Box sx={{ maxWidth: 220, mb: 2 }}>
+              <Logo variant="wordmark" height={36} href="/" />
             </Box>
-            <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.7, maxWidth: 320 }}>
-              {siteConfig.tagline}. {siteConfig.description.slice(0, 140)}…
+            <Typography variant="body2" sx={{ color: colors.textMuted, lineHeight: 1.7, maxWidth: 260 }}>
+              {siteConfig.tagline}
             </Typography>
+            <Box sx={{ display: "flex", gap: 2, mt: 2 }}>
+              <Typography
+                component="a"
+                href="https://www.linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: colors.textMuted, fontSize: "0.85rem", textDecoration: "none", "&:hover": { color: colors.primary } }}
+              >
+                LinkedIn
+              </Typography>
+              <Typography
+                component="a"
+                href="https://www.youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: colors.textMuted, fontSize: "0.85rem", textDecoration: "none", "&:hover": { color: colors.primary } }}
+              >
+                YouTube
+              </Typography>
+            </Box>
           </Grid>
 
-          <FooterColumn title="Products" links={footerNav.products} />
           <FooterColumn title="Platform" links={footerNav.platform} />
+          <FooterColumn title="Solutions" links={footerNav.solutions} />
+          <FooterColumn title="Partners" links={footerNav.partners} />
           <FooterColumn title="Resources" links={footerNav.resources} />
-          <FooterColumn title="Company" links={footerNav.company} />
-          <FooterColumn title="Legal" links={footerLegalLinks} />
+          <FooterColumn title="Company" links={[...footerNav.company, ...footerLegalLinks, ...footerNav.developers]} />
         </Grid>
 
         <Divider sx={{ borderColor: colors.border, my: 4 }} />

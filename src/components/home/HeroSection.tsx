@@ -1,85 +1,65 @@
 "use client";
 
-import { Box, Chip, Container, Typography } from "@mui/material";
-import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutlineOutlined";
+import { Box, Container, Typography } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
+import StarIcon from "@mui/icons-material/Star";
 import NavButton from "@/components/ui/NavButton";
-import HeroOrbitVisual from "@/components/home/HeroOrbitVisual";
+import HeroFlowVisual from "@/components/home/HeroFlowVisual";
 import { homeHero } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function HeroSection() {
   return (
     <Box
-      className="hero-waves"
       sx={{
-        position: "relative",
-        overflow: "hidden",
-        pt: { xs: 4, md: 6 },
-        pb: { xs: 5, md: 8 },
         bgcolor: colors.cream,
+        pt: { xs: 4, md: 8 },
+        pb: { xs: 6, md: 10 },
+        borderBottom: `1px solid ${colors.border}`,
       }}
     >
-      <Container maxWidth={false} sx={{ px: { xs: 2, md: 4 }, maxWidth: 1320 }}>
+      <Container maxWidth={false} sx={{ px: { xs: 2, md: 4 }, maxWidth: 1200 }}>
         <Box
           sx={{
             display: "grid",
-            gridTemplateColumns: { xs: "1fr", lg: "1fr 1fr" },
-            gap: { xs: 5, lg: 4 },
+            gridTemplateColumns: { xs: "1fr", lg: "1.05fr 0.95fr" },
+            gap: { xs: 5, lg: 6 },
             alignItems: "center",
           }}
         >
-          <Box sx={{ maxWidth: 540, zIndex: 1 }}>
-            <Chip
-              icon={<AutoAwesomeIcon sx={{ fontSize: 16 }} />}
-              label={homeHero.badge}
-              sx={{
-                mb: 3,
-                bgcolor: "rgba(29, 78, 216, 0.06)",
-                color: colors.primary,
-                fontWeight: 600,
-                fontSize: "0.8rem",
-                height: 32,
-                border: `1px solid rgba(29, 78, 216, 0.12)`,
-                "& .MuiChip-icon": { color: colors.primary },
-              }}
-            />
+          <Box>
             <Typography
               component="h1"
               sx={{
-                fontSize: { xs: "2.5rem", sm: "3rem", md: "3.5rem" },
+                fontSize: { xs: "2rem", sm: "2.6rem", md: "3.25rem" },
                 fontWeight: 800,
-                lineHeight: 1.08,
-                mb: 3,
-                color: colors.textDark,
+                lineHeight: 1.1,
                 letterSpacing: "-0.03em",
+                color: colors.textDark,
+                mb: 2.5,
+                maxWidth: 560,
               }}
             >
-              {homeHero.headline}{" "}
-              <Box component="span" sx={{ color: colors.primary }}>
-                {homeHero.headlineAccent}
-              </Box>
+              {homeHero.headline}
             </Typography>
             <Typography
               sx={{
                 color: colors.textMuted,
-                fontSize: { xs: "1rem", md: "1.1rem" },
-                lineHeight: 1.75,
+                fontSize: { xs: "1rem", md: "1.125rem" },
+                lineHeight: 1.7,
                 mb: 4,
-                maxWidth: 460,
+                maxWidth: 520,
               }}
             >
               {homeHero.subheadline}
             </Typography>
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, alignItems: "center" }}>
+            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5, mb: 3 }}>
               <NavButton
                 href={homeHero.primaryCta.href}
                 variant="contained"
                 color="primary"
                 size="large"
                 endIcon={<ArrowForwardIcon />}
-                sx={{ px: 3, py: 1.5, borderRadius: 2.5 }}
               >
                 {homeHero.primaryCta.label}
               </NavButton>
@@ -88,17 +68,28 @@ export default function HeroSection() {
                 variant="outlined"
                 color="primary"
                 size="large"
-                startIcon={<PlayCircleOutlineIcon />}
-                sx={{ px: 3, py: 1.5, borderRadius: 2.5, bgcolor: colors.cream }}
               >
                 {homeHero.secondaryCta.label}
               </NavButton>
             </Box>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
+                <Box sx={{ display: "flex", color: "#F59E0B" }}>
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <StarIcon key={i} sx={{ fontSize: 16 }} />
+                  ))}
+                </Box>
+                <Typography sx={{ fontSize: "0.875rem", fontWeight: 600, color: colors.textDark }}>
+                  {homeHero.trustLine}
+                </Typography>
+              </Box>
+              <Typography sx={{ fontSize: "0.8rem", color: colors.textMuted }}>
+                {homeHero.trialNote}
+              </Typography>
+            </Box>
           </Box>
 
-          <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: 420 }}>
-            <HeroOrbitVisual />
-          </Box>
+          <HeroFlowVisual />
         </Box>
       </Container>
     </Box>

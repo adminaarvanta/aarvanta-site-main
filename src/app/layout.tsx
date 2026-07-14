@@ -26,7 +26,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin()),
   title: {
-    default: `${siteConfig.name} — The Business OS for a Connected World`,
+    default: `${siteConfig.name} — One AI Operating System for Your Entire Business`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,

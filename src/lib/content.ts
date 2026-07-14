@@ -1,9 +1,11 @@
+/** Homepage + marketing content — AI Operating System brief */
+
 export const siteConfig = {
   name: "AARVANTA",
-  tagline: "The Business OS for a Connected World",
+  tagline: "One AI Operating System for Your Entire Business",
   description:
-    "AARVANTA unifies operations, finance, CRM, HR, inventory, and AI automation into one intelligent platform — built to run, grow, and transform your entire business.",
-  url: "https://aarvanta.com",
+    "Everything your business needs—CRM, Sales, Marketing, Websites, AI Employees, Automation, Communication, Analytics, and more—in one connected platform.",
+  url: "https://aarvanta.co",
 };
 
 export type NavLink = {
@@ -16,121 +18,239 @@ export type NavLink = {
 export const navLinks: NavLink[] = [];
 
 export const homeHero = {
-  badge: "The Business OS for a Connected World",
-  headline: "Run. Grow. Transform.",
-  headlineAccent: "All in One Place.",
+  headline: "Run Your Entire Business on One AI Operating System",
   subheadline:
-    "Aarvanta unifies every part of your business—from operations and teams to customers and growth—so you can focus on what truly matters.",
-  primaryCta: { label: "Explore Platform", href: "/platform" },
-  secondaryCta: { label: "How It Works", href: "/business-os" },
+    "Everything your business needs—CRM, Sales, Marketing, Websites, AI Employees, Automation, Communication, Analytics, and more—in one connected platform.",
+  primaryCta: { label: "Start Free Trial", href: "/book-demo" },
+  secondaryCta: { label: "Book Live Demo", href: "/book-demo" },
+  trustLine: "Trusted by growing businesses",
+  trialNote: "No credit card required • 15-day free trial",
 };
 
-export const orbitProducts = [] as never[];
-
-export const platformModules = {
-  headline: "One Platform. Endless Possibilities.",
-  subheadline:
-    "Powerful modules, seamless integrations, and intelligent automation working together.",
-  modules: [] as { title: string; description: string; color: string; href: string }[],
-};
-
-export const platformStats = [
-  {
-    value: "14,250+",
-    label: "Businesses on Aarvanta",
-    detail: "Across 120+ Countries",
-  },
-  {
-    value: "2.8M+",
-    label: "Processes Automated",
-    detail: "+ 32% this month",
-    detailColor: "success" as const,
-  },
-  {
-    value: "12.5M+",
-    label: "Time Saved",
-    detail: "Hours across all businesses",
-  },
+export const heroFlowSteps = [
+  "Website",
+  "Lead",
+  "CRM",
+  "AI Employee",
+  "Proposal",
+  "Invoice",
+  "Analytics",
 ];
 
-export const brandingPillars = [
-  {
-    title: "GLOBAL",
-    description: "Built for businesses around the world.",
-    icon: "globe" as const,
-  },
-  {
-    title: "INTELLIGENT",
-    description: "AI-powered automation that drives growth.",
-    icon: "chip" as const,
-  },
-  {
-    title: "SECURE",
-    description: "Enterprise-grade security you can trust.",
-    icon: "shield" as const,
-  },
-  {
-    title: "SCALABLE",
-    description: "Designed to grow with your ambition.",
-    icon: "chart" as const,
-  },
-];
-
-export const trustLogos = [
-  "Dubai",
-  "NHS",
-  "EMAAR",
-  "UNICEF",
-  "IESE",
-  "Accenture",
-  "Greenpeace",
-];
-
-export const trustBarText = "Trusted by businesses worldwide";
-
-export const homePositioning = {
-  headline: "More Than AI Tools. Business Infrastructure.",
-  disconnected: [
-    "One platform for CRM.",
-    "Another for communication.",
-    "Another for websites.",
-    "Another for automation.",
+export const problemSection = {
+  headline: "Businesses are drowning in disconnected software.",
+  intro: "Today, businesses pay for:",
+  tools: [
+    "CRM",
+    "Email Marketing",
+    "WhatsApp Tools",
+    "Automation",
+    "Website Builder",
+    "Forms",
+    "AI Tools",
+    "Scheduling",
+    "Analytics",
+    "Support",
+    "Finance",
+    "HR",
   ],
   closing:
-    "AARVANTA brings everything together into one intelligent ecosystem designed to scale modern businesses.",
+    "Each tool has its own login, data, and workflow. That creates chaos.",
 };
 
-export const uspContent = {
-  headline: "Built As One Connected AI Ecosystem.",
-  intro:
-    "Most AI platforms operate independently. AARVANTA products are designed to communicate with each other seamlessly.",
-  body: "A lead generated through LeadOS can automatically trigger WhatsApp conversations, AI voice calls, CRM workflows, analytics tracking, and conversion funnels — without manual intervention.",
+export const solutionSection = {
+  eyebrow: "Meet Aarvanta.",
+  pillars: ["One login.", "One database.", "One AI.", "One Operating System."],
+  body: "Instead of buying ten different software products, run everything from one platform.",
 };
+
+export const businessFlow = [
+  "Visitor",
+  "Website",
+  "LeadOS",
+  "CRMOS",
+  "AI Sales Executive",
+  "Proposal",
+  "Invoice",
+  "Payment",
+  "Customer Success",
+  "Analytics",
+];
+
+export const coreProducts = [
+  {
+    name: "LeadOS",
+    description: "Capture every opportunity.",
+    href: "/features/crm",
+  },
+  {
+    name: "CRMOS",
+    description: "Manage customers effortlessly.",
+    href: "/features/crm",
+  },
+  {
+    name: "AI Workforce",
+    description: "Your AI sales, marketing, HR, and support team.",
+    href: "/ai-workforce",
+  },
+  {
+    name: "WebsiteOS",
+    description: "Launch stunning websites in minutes.",
+    href: "/platform",
+  },
+  {
+    name: "MarketingOS",
+    description: "Create and publish content automatically.",
+    href: "/orbit",
+  },
+  {
+    name: "FinanceOS",
+    description: "Invoices, payments, accounting.",
+    href: "/features/accounting",
+    comingSoon: true,
+  },
+  {
+    name: "HR OS",
+    description: "Recruitment. Attendance. Payroll.",
+    href: "/features/payroll",
+  },
+  {
+    name: "Communication Hub",
+    description: "Email. WhatsApp. Voice. SMS. One inbox.",
+    href: "/platform",
+  },
+];
+
+export const aiWorkforceSection = {
+  headline: "Meet Your Digital Team.",
+  subheadline: "Each role comes with tasks, automation, memory, reports — and is available 24/7.",
+  roles: [
+    "AI Sales Executive",
+    "AI Customer Success Manager",
+    "AI HR Manager",
+    "AI Accountant",
+    "AI Marketing Manager",
+    "AI Operations Manager",
+    "AI Legal Assistant",
+    "AI Business Analyst",
+  ],
+  traits: ["Tasks", "Automation", "Memory", "Reports", "Available 24/7"],
+};
+
+export const audienceCards = [
+  {
+    title: "Startups",
+    description: "Launch fast with one platform instead of a stack of tools.",
+    href: "/solutions/startups",
+  },
+  {
+    title: "SMEs",
+    description: "Run sales, ops, and delivery without tool chaos.",
+    href: "/solutions/enterprise",
+  },
+  {
+    title: "Agencies",
+    description: "Manage clients and campaigns from one connected workspace.",
+    href: "/solutions/agencies",
+  },
+  {
+    title: "Consultants",
+    description: "Stay organised, follow up automatically, and never lose a lead.",
+    href: "/solutions",
+  },
+];
+
+export const whyOutcomes = [
+  "Save 20+ hours every week.",
+  "Replace multiple subscriptions.",
+  "Grow without hiring immediately.",
+  "Never lose a lead.",
+  "Stop doing repetitive work manually.",
+  "Scale globally.",
+];
 
 export const partnerSection = {
-  headline: "Build Your Own AI Business Under Your Brand.",
-  body: "AARVANTA's white-label infrastructure allows agencies, consultants, and entrepreneurs to offer advanced AI systems under their own branding while we power the backend technology.",
+  headline: "Become an Aarvanta Partner.",
+  body: "Recurring commissions. Training. Dedicated support. Global opportunities.",
+  types: ["Resellers", "White Label", "Consultants", "Franchise Partners"],
   cta: { label: "Become a Partner", href: "/partners/apply" },
 };
 
-export const caseStudiesHeadline = "Focused on Outcomes, Not Buzzwords.";
-
-export const globalSection = {
-  headline: "Built in the UK. Designed for Global Scale.",
-  body: "AARVANTA combines global infrastructure, AI systems, automation, and scalable architecture to support businesses and partners across international markets.",
+export const trustSection = {
+  headline: "Built for trust.",
+  logos: ["Dubai", "NHS", "EMAAR", "UNICEF", "IESE", "Accenture", "Greenpeace"],
+  badges: ["Security", "GDPR", "99.9% uptime", "Enterprise-ready"],
+  cta: { label: "See case studies", href: "/case-studies" },
 };
+
+export const trustLogos = trustSection.logos;
+export const trustBarText = "Trusted by growing businesses";
 
 export const pricingSection = {
-  headline: "Flexible for Businesses. Scalable for Partners.",
-  disclaimer: "Custom pricing based on scale and requirements.",
+  headline: "Simple. Transparent.",
+  disclaimer: "15-day free trial. No credit card required.",
 };
 
+export const pricingTiers = [
+  {
+    name: "Starter",
+    price: "£99",
+    period: "/month",
+    description: "For small teams getting started.",
+    features: [
+      "Core CRM & LeadOS",
+      "Communication Hub",
+      "1 AI Employee",
+      "Email support",
+    ],
+  },
+  {
+    name: "Growth",
+    price: "£299",
+    period: "/month",
+    description: "For businesses ready to scale.",
+    features: [
+      "Full product access",
+      "AI Workforce roles",
+      "Automation & analytics",
+      "Priority support",
+    ],
+    highlighted: true,
+  },
+  {
+    name: "Business",
+    price: "£699",
+    period: "/month",
+    description: "For multi-team operations.",
+    features: [
+      "Advanced AI Workforce",
+      "Multi-location support",
+      "Custom workflows",
+      "Dedicated onboarding",
+    ],
+  },
+  {
+    name: "Enterprise",
+    price: "Let's Talk",
+    period: "",
+    description: "For organisations that need scale.",
+    features: [
+      "Custom integrations",
+      "Security & compliance",
+      "SLA & account manager",
+      "White-label options",
+    ],
+  },
+];
+
 export const finalCta = {
-  headline: "Ready to Run Your Business in One Place?",
-  body: "Join thousands of businesses worldwide using AARVANTA to automate operations, unify teams, and scale with confidence.",
-  primaryCta: { label: "Start Free", href: "/book-demo" },
-  secondaryCta: { label: "Book a Demo", href: "/book-demo" },
+  headline: "Ready to Run Your Business Smarter?",
+  body: "Join businesses replacing disconnected software with one intelligent operating system.",
+  primaryCta: { label: "Start Free Trial", href: "/book-demo" },
+  secondaryCta: { label: "Book Demo", href: "/book-demo" },
 };
+
+/* —— retained for existing inner pages —— */
 
 export const aboutPage = {
   headline: "Building Infrastructure for the AI-Driven Business Era.",
@@ -146,35 +266,9 @@ export const contactPage = {
   formCta: "Schedule a Strategy Call",
 };
 
-export const footerProductLinks = [
-  { label: "LeadOS", href: "/products#leados" },
-  { label: "WhatsAppOS", href: "/products#whatsappos" },
-  { label: "VoiceOS", href: "/products#voiceos" },
-  { label: "SiteOS", href: "/products#siteos" },
-  { label: "CRMOS", href: "/products#crmos" },
-  { label: "ContentOS", href: "/products#contentos" },
-];
-
-export const footerCompanyLinks = [
-  { label: "About", href: "/about" },
-  { label: "Partner Program", href: "/partners" },
-  { label: "Careers", href: "/careers" },
-  { label: "Contact", href: "/contact" },
-];
-
 export const footerLegalLinks = [
-  { label: "Privacy Policy", href: "/privacy" },
+  { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "Cookies", href: "/cookies" },
-  { label: "GDPR", href: "/gdpr" },
-  { label: "DPA", href: "/dpa" },
-  { label: "Acceptable Use", href: "/acceptable-use" },
-  { label: "AI Policy", href: "/ai-policy" },
-  { label: "Security", href: "/security" },
-  { label: "Refunds", href: "/refunds" },
-  { label: "Partner Terms", href: "/partner-terms" },
-  { label: "Affiliate Terms", href: "/affiliate-terms" },
-  { label: "Subscription Agreement", href: "/subscription-agreement" },
 ];
 
 export const products = [
@@ -182,355 +276,227 @@ export const products = [
     id: "leados",
     name: "Aarvanta LeadOS",
     shortName: "LeadOS",
-    description:
-      "AI-powered lead generation infrastructure designed to identify, score, and engage high-value prospects automatically.",
-    features: [
-      "Lead scraping",
-      "AI scoring",
-      "Outreach automation",
-      "CRM syncing",
-      "Hyperlocal targeting",
-    ],
+    description: "Capture every opportunity.",
+    features: ["Lead capture", "AI scoring", "Outreach", "CRM sync"],
     icon: "lead",
-  },
-  {
-    id: "whatsappos",
-    name: "Aarvanta WhatsAppOS",
-    shortName: "WhatsAppOS",
-    description:
-      "Turn WhatsApp into a fully automated business communication and conversion engine.",
-    features: [
-      "AI conversations",
-      "Smart follow-ups",
-      "CRM integration",
-      "Appointment booking",
-      "Customer memory",
-    ],
-    icon: "whatsapp",
-  },
-  {
-    id: "voiceos",
-    name: "Aarvanta VoiceOS",
-    shortName: "VoiceOS",
-    description:
-      "AI voice agents and reception systems that answer, qualify, and convert customers 24/7.",
-    features: [
-      "AI receptionist",
-      "Multilingual calls",
-      "Appointment handling",
-      "Emotional intelligence",
-      "CRM logging",
-    ],
-    icon: "voice",
-  },
-  {
-    id: "siteos",
-    name: "Aarvanta SiteOS",
-    shortName: "SiteOS",
-    description:
-      "AI-generated business websites engineered for speed, SEO, and conversion.",
-    features: [
-      "AI content",
-      "SEO optimization",
-      "Lead funnels",
-      "Automation integration",
-      "Conversion analytics",
-    ],
-    icon: "site",
-  },
-  {
-    id: "contentos",
-    name: "Aarvanta ContentOS",
-    shortName: "ContentOS",
-    description:
-      "AI-powered social media and content generation system built for growth-focused brands.",
-    features: [
-      "Reels",
-      "Carousels",
-      "AI scripts",
-      "Content calendars",
-      "Trend intelligence",
-    ],
-    icon: "content",
   },
   {
     id: "crmos",
     name: "Aarvanta CRMOS",
     shortName: "CRMOS",
-    description:
-      "An intelligent operating system managing leads, teams, sales, finance, automation, and analytics from one dashboard.",
-    features: [
-      "Unified dashboard",
-      "Team management",
-      "Sales pipeline",
-      "Finance tracking",
-      "Automation hub",
-      "Analytics",
-    ],
+    description: "Manage customers effortlessly.",
+    features: ["Pipeline", "Contacts", "Follow-ups", "Reports"],
+    icon: "crm",
+  },
+  {
+    id: "aiworkforce",
+    name: "AI Workforce",
+    shortName: "AI Workforce",
+    description: "Your AI sales, marketing, HR, and support team.",
+    features: ["Sales", "Support", "HR", "Ops"],
+    icon: "lead",
+  },
+  {
+    id: "websiteos",
+    name: "WebsiteOS",
+    shortName: "WebsiteOS",
+    description: "Launch stunning websites in minutes.",
+    features: ["Templates", "SEO", "Forms", "Analytics"],
+    icon: "site",
+  },
+  {
+    id: "marketingos",
+    name: "MarketingOS",
+    shortName: "MarketingOS",
+    description: "Create and publish content automatically.",
+    features: ["Content", "Social", "Campaigns", "Calendar"],
+    icon: "content",
+  },
+  {
+    id: "financeos",
+    name: "FinanceOS",
+    shortName: "FinanceOS",
+    description: "Invoices, payments, accounting. Coming Soon.",
+    features: ["Invoices", "Payments", "Accounting"],
     icon: "crm",
   },
 ];
 
 export const featureGrid = [
-  {
-    title: "AI Lead Systems",
-    description: "Find, qualify, and nurture leads automatically.",
-    icon: "lead",
-  },
-  {
-    title: "AI Communication",
-    description:
-      "WhatsApp AI, Voice AI, and intelligent customer conversations.",
-    icon: "communication",
-  },
-  {
-    title: "AI Operations",
-    description: "Automate workflows, teams, reporting, and follow-ups.",
-    icon: "operations",
-  },
-  {
-    title: "AI Business Websites",
-    description:
-      "High-converting websites built for growth, not just design.",
-    icon: "website",
-  },
+  { title: "Never lose a lead.", description: "Every enquiry is captured and followed up.", icon: "lead" },
+  { title: "Never lose another customer conversation.", description: "One inbox for email, WhatsApp, voice, and SMS.", icon: "communication" },
+  { title: "Stop doing repetitive work manually.", description: "Your digital team handles follow-ups and routines.", icon: "operations" },
+  { title: "Launch websites built to convert.", description: "WebsiteOS gets you live in minutes.", icon: "website" },
 ];
 
 export const industries = [
-  {
-    title: "Clinics & Healthcare",
-    description:
-      "Automate appointments, follow-ups, and lead nurturing.",
-    icon: "healthcare",
-  },
-  {
-    title: "Real Estate",
-    description: "AI lead qualification and automated client engagement.",
-    icon: "realestate",
-  },
-  {
-    title: "Education & Coaching",
-    description:
-      "Scale communication, admissions, and student onboarding.",
-    icon: "education",
-  },
-  {
-    title: "Restaurants & Hospitality",
-    description: "Bookings, customer engagement, and retention systems.",
-    icon: "hospitality",
-  },
-  {
-    title: "Agencies & Consultants",
-    description: "White-label AI infrastructure for client delivery.",
-    icon: "agency",
-  },
-  {
-    title: "Immigration & Legal",
-    description: "AI-powered intake systems and lead workflows.",
-    icon: "legal",
-  },
+  { title: "Startups", description: "One platform instead of a stack of tools.", icon: "agency" },
+  { title: "SMEs", description: "Run sales and ops without tool chaos.", icon: "realestate" },
+  { title: "Agencies", description: "Multi-client delivery from one workspace.", icon: "agency" },
+  { title: "Consultants", description: "Stay organised and never lose a lead.", icon: "legal" },
 ];
 
 export const partnerFeatures = [
-  "White-label dashboards",
-  "Custom domains",
-  "Partner pricing",
-  "API access",
-  "Recurring revenue model",
-  "Multi-client management",
+  "Resellers",
+  "White Label",
+  "Consultants",
+  "Franchise Partners",
+  "Recurring commissions",
+  "Training & dedicated support",
 ];
 
 export const caseStudies = [
   {
-    outcome:
-      "Reduced missed customer enquiries by 72% using AI communication systems.",
+    outcome: "Reduced missed customer enquiries by 72% using automated follow-up.",
     industry: "Healthcare",
     metric: "72%",
-    metricLabel: "Reduction in missed enquiries",
+    metricLabel: "Fewer missed enquiries",
   },
   {
-    outcome:
-      "Automated lead follow-ups for a consulting business, improving conversions significantly.",
+    outcome: "Automated lead follow-ups for a consulting business, improving conversions.",
     industry: "Consulting",
     metric: "3.2×",
-    metricLabel: "Improvement in conversion rate",
+    metricLabel: "Conversion lift",
   },
   {
-    outcome:
-      "Deployed AI voice reception system reducing front-desk workload.",
+    outcome: "Deployed AI reception, reducing front-desk workload.",
     industry: "Professional Services",
     metric: "60%",
-    metricLabel: "Reduction in front-desk workload",
+    metricLabel: "Less desk workload",
   },
 ];
 
-export const pricingTiers = [
-  {
-    name: "Starter",
-    description: "For small businesses.",
-    features: [
-      "Core AI communication tools",
-      "Basic automation workflows",
-      "Single location support",
-      "Email support",
-    ],
-  },
-  {
-    name: "Growth",
-    description: "For scaling companies.",
-    features: [
-      "Full product ecosystem access",
-      "Advanced automation",
-      "Multi-channel integration",
-      "Priority support",
-      "Analytics dashboard",
-    ],
-    highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    description: "For multi-location businesses and agencies.",
-    features: [
-      "Custom integrations",
-      "Dedicated account manager",
-      "Advanced security & compliance",
-      "Multi-location management",
-      "Custom reporting",
-    ],
-  },
-  {
-    name: "White-Label",
-    description: "For partners and resellers.",
-    features: [
-      "Full white-label platform",
-      "Partner pricing",
-      "API access",
-      "Multi-client management",
-      "Recurring revenue model",
-    ],
-  },
-];
+export const caseStudiesHeadline = "Focused on outcomes, not buzzwords.";
 
 export const solutions = [
   {
-    title: "Lead Generation Infrastructure",
-    description:
-      "End-to-end systems to find, score, and convert high-value prospects.",
-    products: ["LeadOS", "CRMOS"],
+    title: "Startups",
+    description: "Launch fast with one operating system.",
+    products: ["LeadOS", "CRMOS", "AI Workforce"],
   },
   {
-    title: "Customer Communication",
-    description:
-      "Unified AI across WhatsApp, voice, and messaging channels.",
-    products: ["WhatsAppOS", "VoiceOS"],
+    title: "SMEs",
+    description: "Replace disconnected tools with one platform.",
+    products: ["CRMOS", "FinanceOS", "Communication Hub"],
   },
   {
-    title: "Digital Presence & Content",
-    description:
-      "Websites and content systems engineered for growth and conversion.",
-    products: ["SiteOS", "ContentOS"],
+    title: "Agencies",
+    description: "Deliver for clients under one connected stack.",
+    products: ["MarketingOS", "WebsiteOS", "AI Workforce"],
   },
   {
-    title: "Business Operations",
-    description:
-      "Centralised CRM, automation, and analytics for operational scale.",
-    products: ["CRMOS"],
+    title: "Consultants",
+    description: "Never lose a lead or a conversation.",
+    products: ["LeadOS", "CRMOS", "Communication Hub"],
   },
 ];
 
 export const aboutValues = [
   {
     title: "Practical Innovation",
-    description:
-      "Technology should solve operational problems, not create complexity.",
+    description: "Technology should solve operational problems, not create complexity.",
   },
   {
     title: "Human-Centered AI",
-    description:
-      "AI should improve communication and decision-making, not replace authenticity.",
+    description: "AI should improve communication and decision-making, not replace authenticity.",
   },
   {
     title: "Scalable Systems",
-    description:
-      "Every product is designed for long-term operational scale.",
+    description: "Every product is designed for long-term operational scale.",
   },
 ];
 
-export const ecosystemFlow = [
-  "LeadOS",
-  "CRMOS",
-  "WhatsAppOS",
-  "VoiceOS",
-  "Automation Engine",
-  "Analytics",
-];
+export const ecosystemFlow = businessFlow;
 
 export const blogPosts = [
   {
     slug: "ai-lead-generation-systems",
-    title: "Building AI Lead Generation Systems That Actually Convert",
-    excerpt:
-      "Operational insights on designing lead systems that qualify prospects automatically and integrate with your sales workflow.",
+    title: "Building Lead Systems That Actually Convert",
+    excerpt: "How to capture every opportunity and follow up automatically.",
     category: "Lead Generation",
     date: "2026-05-15",
   },
   {
     slug: "whatsapp-automation-guide",
-    title: "WhatsApp AI Automation: A Practical Implementation Guide",
-    excerpt:
-      "How to turn WhatsApp into a conversion engine without losing the human touch in customer conversations.",
-    category: "Automation",
+    title: "Never Lose Another Customer Conversation",
+    excerpt: "One inbox for WhatsApp, email, voice, and SMS.",
+    category: "Communication",
     date: "2026-05-08",
   },
   {
     slug: "voice-ai-reception",
-    title: "Deploying AI Voice Reception: What Works in Real Businesses",
-    excerpt:
-      "Case study insights on reducing front-desk workload while improving customer response times.",
-    category: "Case Study",
+    title: "Your AI Sales Executive Follows Up Automatically",
+    excerpt: "How digital team members reduce missed enquiries.",
+    category: "AI Workforce",
     date: "2026-04-28",
   },
   {
     slug: "white-label-ai-infrastructure",
-    title: "White-Label AI Infrastructure for Agencies",
-    excerpt:
-      "How agencies can build recurring revenue by offering AI systems under their own brand.",
+    title: "Become an Aarvanta Partner",
+    excerpt: "Resellers, white label, and recurring commissions.",
     category: "Partner Program",
     date: "2026-04-20",
   },
 ];
 
 export const seoKeywords = [
-  "AI automation company UK",
-  "AI business systems",
-  "AI lead generation",
-  "WhatsApp AI automation",
-  "AI voice receptionist",
-  "AI CRM system",
-  "white-label AI solutions",
-  "AI infrastructure company",
+  "AI operating system for business",
+  "business OS platform",
+  "AI workforce",
+  "CRM and sales automation UK",
+  "white-label business software",
 ];
 
 export const serviceOptions = [
   "LeadOS",
-  "WhatsAppOS",
-  "VoiceOS",
-  "SiteOS",
-  "ContentOS",
   "CRMOS",
-  "Full Ecosystem",
-  "White-Label Partnership",
+  "AI Workforce",
+  "WebsiteOS",
+  "MarketingOS",
+  "FinanceOS",
+  "Full Platform",
+  "Partner Program",
 ];
 
 export const industryOptions = industries.map((i) => i.title);
 
-export const teamSizeOptions = [
-  "1–5",
-  "6–20",
-  "21–50",
-  "51–200",
-  "200+",
+export const teamSizeOptions = ["1–5", "6–20", "21–50", "51–200", "200+"];
+
+export const values = aboutValues;
+
+/** legacy exports kept for older sections */
+export const platformModules = {
+  headline: "Core Products",
+  subheadline: "Everything you need in one connected platform.",
+  modules: [] as { title: string; description: string; color: string; href: string }[],
+};
+
+export const platformStats = [
+  { value: "99.9%", label: "Uptime", detail: "Enterprise-ready", detailColor: undefined as "success" | undefined },
+  { value: "15", label: "Day free trial", detail: "No credit card", detailColor: undefined as "success" | undefined },
+  { value: "24/7", label: "Digital team", detail: "Always available", detailColor: "success" as const },
 ];
 
-/** @alias aboutValues */
-export const values = aboutValues;
+export const brandingPillars = [
+  { title: "GLOBAL", description: "Built for businesses around the world.", icon: "globe" as const },
+  { title: "INTELLIGENT", description: "Your digital team works around the clock.", icon: "chip" as const },
+  { title: "SECURE", description: "GDPR-ready and enterprise-grade.", icon: "shield" as const },
+  { title: "SCALABLE", description: "Designed to grow with your ambition.", icon: "chart" as const },
+];
+
+export const homePositioning = {
+  headline: problemSection.headline,
+  disconnected: problemSection.tools.map((t) => t),
+  closing: problemSection.closing,
+};
+
+export const uspContent = {
+  headline: solutionSection.eyebrow,
+  intro: solutionSection.pillars.join(" "),
+  body: solutionSection.body,
+};
+
+export const globalSection = {
+  headline: "Built to scale globally.",
+  body: "One platform designed for businesses that operate across teams, markets, and time zones.",
+};

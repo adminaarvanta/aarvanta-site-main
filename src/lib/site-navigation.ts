@@ -10,61 +10,40 @@ export type NavGroup = {
   children?: NavItem[];
 };
 
-/** Primary header navigation — order matches Website 2.0 mockup */
+/** Primary header navigation — max 7 top-level items */
 export const primaryNav: NavGroup[] = [
   {
-    label: "Products",
-    href: "/business-os",
+    label: "Platform",
+    href: "/platform",
     children: [
-      { label: "Business OS", href: "/business-os", description: "Run your entire business" },
-      { label: "Orbit", href: "/orbit", description: "Marketing & growth operating system" },
-      { label: "Fluentra", href: "/fluentra", description: "Study abroad & immigration" },
-      { label: "Nuri", href: "/nuri", description: "Neurodivergent care companion" },
-      { label: "All Features", href: "/features", description: "Browse every capability" },
+      { label: "Overview", href: "/platform", description: "The complete Aarvanta platform" },
+      { label: "Core Products", href: "/products", description: "LeadOS, CRMOS, WebsiteOS & more" },
+      { label: "Features", href: "/features", description: "Browse every capability" },
+      { label: "Security", href: "/security", description: "Enterprise-grade protection" },
+      { label: "Developers", href: "/developers", description: "APIs, SDKs, and webhooks" },
     ],
   },
   {
     label: "Solutions",
     href: "/solutions",
     children: [
-      { label: "All Solutions", href: "/solutions", description: "Solutions by business type" },
-      { label: "Industries", href: "/industries", description: "Sector-specific workflows" },
       { label: "Startups", href: "/solutions/startups", description: "Launch fast, scale smart" },
-      { label: "Enterprise", href: "/solutions/enterprise", description: "Governance at scale" },
+      { label: "SMEs", href: "/solutions/enterprise", description: "One platform for growing teams" },
       { label: "Agencies", href: "/solutions/agencies", description: "Multi-client operations" },
-      { label: "E-commerce", href: "/solutions/ecommerce", description: "Sell and fulfil globally" },
+      { label: "Consultants", href: "/solutions", description: "Never lose a lead" },
+      { label: "Industries", href: "/industries", description: "Sector-specific workflows" },
     ],
   },
   {
-    label: "Platform",
-    href: "/platform",
-    children: [
-      { label: "Overview", href: "/platform", description: "The complete Aarvanta platform" },
-      { label: "Architecture", href: "/platform/architecture", description: "How the ecosystem connects" },
-      { label: "Security", href: "/security", description: "Enterprise-grade protection" },
-      { label: "Integrations", href: "/platform/integrations", description: "Connect your existing tools" },
-      { label: "Automation", href: "/features/automation", description: "Workflows and triggers" },
-      { label: "Developers", href: "/developers", description: "APIs, SDKs, and webhooks" },
-    ],
-  },
-  {
-    label: "Resources",
-    href: "/resources",
-    children: [
-      { label: "Resource Hub", href: "/resources", description: "Guides, templates, and more" },
-      { label: "Blog", href: "/blog", description: "Insights and updates" },
-      { label: "Case Studies", href: "/case-studies", description: "Customer success stories" },
-      { label: "Documentation", href: "/resources/documentation", description: "Product documentation" },
-      { label: "Academy", href: "/resources/academy", description: "Learn the platform" },
-    ],
+    label: "AI Workforce",
+    href: "/ai-workforce",
   },
   {
     label: "Partners",
     href: "/partners",
     children: [
       { label: "Partner Program", href: "/partners", description: "Grow with Aarvanta" },
-      { label: "Referral Program", href: "/partners/referral", description: "Earn by referring businesses" },
-      { label: "Reseller Program", href: "/partners/reseller", description: "Sell under your brand" },
+      { label: "Resellers & White Label", href: "/partners/reseller", description: "Sell under your brand" },
       { label: "Become a Partner", href: "/partners/apply", description: "Apply to join" },
     ],
   },
@@ -73,14 +52,13 @@ export const primaryNav: NavGroup[] = [
     href: "/pricing",
   },
   {
-    label: "Company",
-    href: "/company",
+    label: "Resources",
+    href: "/resources",
     children: [
-      { label: "About", href: "/about", description: "Our story and mission" },
-      { label: "Careers", href: "/careers", description: "Join the team" },
-      { label: "Contact", href: "/contact", description: "Get in touch" },
-      { label: "Security", href: "/security", description: "Trust centre" },
-      { label: "Legal", href: "/terms", description: "Terms and policies" },
+      { label: "Blog", href: "/blog", description: "Insights and updates" },
+      { label: "Case Studies", href: "/case-studies", description: "Customer outcomes" },
+      { label: "Documentation", href: "/resources/documentation", description: "Product docs" },
+      { label: "Academy", href: "/resources/academy", description: "Learn the platform" },
     ],
   },
 ];
@@ -303,30 +281,36 @@ export const hubPages = {
 };
 
 export const footerNav = {
-  products: [
-    { label: "Business OS", href: "/business-os" },
-    { label: "Orbit", href: "/orbit" },
-    { label: "Fluentra", href: "/fluentra" },
-    { label: "Nuri", href: "/nuri" },
+  platform: [
+    { label: "Overview", href: "/platform" },
+    { label: "Products", href: "/products" },
+    { label: "AI Workforce", href: "/ai-workforce" },
     { label: "Features", href: "/features" },
   ],
-  platform: [
-    { label: "Platform Overview", href: "/platform" },
-    { label: "Integrations", href: "/platform/integrations" },
-    { label: "Developers", href: "/developers" },
-    { label: "Security", href: "/security" },
+  solutions: [
+    { label: "Startups", href: "/solutions/startups" },
+    { label: "SMEs", href: "/solutions/enterprise" },
+    { label: "Agencies", href: "/solutions/agencies" },
+    { label: "Consultants", href: "/solutions" },
+  ],
+  partners: [
+    { label: "Partner Program", href: "/partners" },
+    { label: "Become a Partner", href: "/partners/apply" },
   ],
   resources: [
     { label: "Blog", href: "/blog" },
     { label: "Case Studies", href: "/case-studies" },
     { label: "Documentation", href: "/resources/documentation" },
-    { label: "Academy", href: "/resources/academy" },
+  ],
+  developers: [
+    { label: "Developers", href: "/developers" },
+    { label: "API", href: "/developers/api" },
   ],
   company: [
     { label: "About", href: "/about" },
-    { label: "Partners", href: "/partners" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
+    { label: "Security", href: "/security" },
   ],
 };
 
