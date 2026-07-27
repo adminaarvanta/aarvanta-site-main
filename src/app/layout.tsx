@@ -32,13 +32,20 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: seoKeywords,
   icons: {
-    icon: withBasePath("/aarvanta-logo.png"),
+    icon: [
+      { url: withBasePath("/favicon.ico"), sizes: "any" },
+      { url: withBasePath("/favicon-16x16.png"), sizes: "16x16", type: "image/png" },
+      { url: withBasePath("/favicon-32x32.png"), sizes: "32x32", type: "image/png" },
+      { url: withBasePath("/favicon-48x48.png"), sizes: "48x48", type: "image/png" },
+      { url: withBasePath("/icon-192.png"), sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: withBasePath("/apple-touch-icon.png"), sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
     title: siteConfig.name,
     description: siteConfig.description,
     type: "website",
-    images: [withBasePath("/aarvanta-logo.png")],
+    images: [withBasePath("/aarvanta-logo-header-mark.png")],
   },
   other: {
     "facebook-domain-verification": "cjpw9pc8dqex6t8kkk2dtlu9s6o9ks",
