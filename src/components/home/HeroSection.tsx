@@ -11,38 +11,44 @@ import { colors } from "@/lib/theme";
 
 export default function HeroSection() {
   return (
-    <SectionShell variant="glassPanel" maxWidth={false} containerSx={{ maxWidth: 1200 }}>
+    <SectionShell variant="glassPanel" maxWidth={false} containerSx={{ maxWidth: 1240 }}>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", lg: "1.05fr 0.95fr" },
-          gap: { xs: 5, lg: 6 },
+          gridTemplateColumns: { xs: "1fr", lg: "1.1fr 0.9fr" },
+          gap: { xs: 5, lg: 7 },
           alignItems: "center",
         }}
       >
         <Box>
           <Typography
             sx={{
-              color: colors.gold,
+              display: "inline-block",
+              color: colors.deepNavy,
+              bgcolor: colors.goldTint,
+              border: `1px solid ${colors.gold}`,
               fontWeight: 700,
-              fontSize: "0.8rem",
-              letterSpacing: "0.12em",
+              fontSize: "0.72rem",
+              letterSpacing: "0.14em",
               textTransform: "uppercase",
-              mb: 2,
+              px: 1.5,
+              py: 0.6,
+              mb: 3,
             }}
           >
             AI Operating System
           </Typography>
           <Typography
             component="h1"
+            className="font-serif"
             sx={{
-              fontSize: { xs: "2rem", sm: "2.6rem", md: "3.25rem" },
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-              color: colors.textDark,
+              fontSize: { xs: "2.35rem", sm: "3.1rem", md: "3.75rem" },
+              fontWeight: 600,
+              lineHeight: 1.05,
+              letterSpacing: "-0.02em",
+              color: colors.deepNavy,
               mb: 2.5,
-              maxWidth: 560,
+              maxWidth: 620,
             }}
           >
             {homeHero.headline}
@@ -50,15 +56,17 @@ export default function HeroSection() {
           <Typography
             sx={{
               color: colors.textMuted,
-              fontSize: { xs: "1rem", md: "1.125rem" },
+              fontSize: { xs: "1.05rem", md: "1.2rem" },
               lineHeight: 1.7,
               mb: 4,
               maxWidth: 520,
+              borderLeft: `3px solid ${colors.gold}`,
+              pl: 2,
             }}
           >
             {homeHero.subheadline}
           </Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5, mb: 3 }}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1.5, mb: 3.5 }}>
             <NavButton
               href={homeHero.primaryCta.href}
               variant="contained"
@@ -77,19 +85,17 @@ export default function HeroSection() {
               {homeHero.secondaryCta.label}
             </NavButton>
           </Box>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexWrap: "wrap" }}>
-              <Box sx={{ display: "flex", color: colors.gold }}>
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <StarIcon key={i} sx={{ fontSize: 16 }} />
-                ))}
-              </Box>
-              <Typography sx={{ fontSize: "0.875rem", fontWeight: 600, color: colors.textDark }}>
-                {homeHero.trustLine}
-              </Typography>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1.25, flexWrap: "wrap" }}>
+            <Box sx={{ display: "flex", color: colors.gold }}>
+              {Array.from({ length: 5 }).map((_, i) => (
+                <StarIcon key={i} sx={{ fontSize: 15 }} />
+              ))}
             </Box>
+            <Typography sx={{ fontSize: "0.85rem", fontWeight: 600, color: colors.textDark }}>
+              {homeHero.trustLine}
+            </Typography>
             <Typography sx={{ fontSize: "0.8rem", color: colors.textMuted }}>
-              {homeHero.trialNote}
+              · {homeHero.trialNote}
             </Typography>
           </Box>
         </Box>

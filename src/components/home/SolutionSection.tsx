@@ -7,69 +7,97 @@ import { colors } from "@/lib/theme";
 
 export default function SolutionSection() {
   return (
-    <SectionShell variant="splitRail" maxWidth="md">
+    <SectionShell variant="splitRail" disableContainer>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "0.9fr 1.1fr" },
-          gap: { xs: 4, md: 5 },
-          alignItems: "center",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
+          minHeight: { md: 480 },
         }}
       >
         <Box
           sx={{
-            borderRight: { md: `2px solid ${colors.primary}` },
-            pr: { md: 4 },
+            bgcolor: colors.deepNavy,
+            color: colors.white,
+            px: { xs: 3, md: 7 },
+            py: { xs: 6, md: 10 },
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
           <Typography
             sx={{
               color: colors.gold,
               fontWeight: 700,
-              fontSize: "0.8rem",
-              letterSpacing: "0.12em",
+              fontSize: "0.75rem",
+              letterSpacing: "0.16em",
               textTransform: "uppercase",
-              mb: 1.5,
+              mb: 2,
             }}
           >
             The solution
           </Typography>
           <Typography
+            className="font-serif"
             sx={{
-              fontSize: { xs: "1.75rem", md: "2.25rem" },
-              fontWeight: 800,
-              color: colors.textDark,
-              letterSpacing: "-0.02em",
-              mb: 2,
+              fontSize: { xs: "2.25rem", md: "3rem" },
+              fontWeight: 600,
+              lineHeight: 1.1,
+              mb: 3,
             }}
           >
             {solutionSection.eyebrow}
           </Typography>
-          <Typography sx={{ color: colors.textMuted, lineHeight: 1.7, fontSize: "1.05rem" }}>
+          <Typography sx={{ color: "rgba(255,255,255,0.75)", lineHeight: 1.75, fontSize: "1.1rem", maxWidth: 400 }}>
             {solutionSection.body}
           </Typography>
         </Box>
 
         <Box
           sx={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 1.5,
+            bgcolor: colors.cream,
+            px: { xs: 3, md: 7 },
+            py: { xs: 5, md: 8 },
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: 0,
+            borderTop: { xs: `6px solid ${colors.gold}`, md: "none" },
+            borderLeft: { md: `6px solid ${colors.gold}` },
           }}
         >
-          {solutionSection.pillars.map((pillar) => (
+          {solutionSection.pillars.map((pillar, index) => (
             <Box
               key={pillar}
               sx={{
-                bgcolor: colors.offWhite,
-                borderRadius: 2.5,
-                border: `1px solid ${colors.borderNavy}`,
                 py: 2.5,
-                px: 2,
-                borderTop: `3px solid ${colors.gold}`,
+                borderBottom: index < solutionSection.pillars.length - 1 ? `1px solid ${colors.borderNavy}` : "none",
+                display: "flex",
+                alignItems: "baseline",
+                gap: 2.5,
               }}
             >
-              <Typography sx={{ fontWeight: 800, fontSize: "1rem", color: colors.textDark }}>
+              <Typography
+                sx={{
+                  fontFamily: "var(--font-playfair), Georgia, serif",
+                  fontSize: "1.75rem",
+                  color: colors.gold,
+                  fontWeight: 600,
+                  lineHeight: 1,
+                  minWidth: 36,
+                }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </Typography>
+              <Typography
+                sx={{
+                  fontWeight: 800,
+                  fontSize: { xs: "1.35rem", md: "1.65rem" },
+                  color: colors.deepNavy,
+                  letterSpacing: "-0.02em",
+                }}
+              >
                 {pillar}
               </Typography>
             </Box>

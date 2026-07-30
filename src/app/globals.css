@@ -44,7 +44,7 @@ html {
 }
 
 .font-serif {
-  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
 }
 
 ::selection {

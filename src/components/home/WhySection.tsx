@@ -1,37 +1,74 @@
 "use client";
 
 import { Box, Typography } from "@mui/material";
-import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import SectionShell from "@/components/ui/sections/SectionShell";
-import SectionHeader from "@/components/ui/sections/SectionHeader";
 import { whyOutcomes } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function WhySection() {
   return (
     <SectionShell variant="paper" maxWidth="md">
-      <SectionHeader eyebrow="Why AARVANTA" title="One system. Less chaos. More clarity." />
-      <Box
+      <Typography
         sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", sm: "1fr 1fr" },
-          gap: 2,
+          color: colors.gold,
+          fontWeight: 700,
+          fontSize: "0.75rem",
+          letterSpacing: "0.16em",
+          textTransform: "uppercase",
+          mb: 2,
+          textAlign: "center",
         }}
       >
-        {whyOutcomes.map((outcome) => (
+        Why AARVANTA
+      </Typography>
+      <Typography
+        component="h2"
+        className="font-serif"
+        sx={{
+          textAlign: "center",
+          fontSize: { xs: "2rem", md: "2.75rem" },
+          fontWeight: 600,
+          color: colors.deepNavy,
+          mb: 6,
+          lineHeight: 1.15,
+        }}
+      >
+        One system. Less chaos. More clarity.
+      </Typography>
+
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 0, maxWidth: 640, mx: "auto" }}>
+        {whyOutcomes.map((outcome, index) => (
           <Box
             key={outcome}
             sx={{
-              display: "flex",
-              alignItems: "flex-start",
-              gap: 1.5,
-              py: 2,
-              px: 2.5,
-              borderBottom: `1px solid ${colors.border}`,
+              display: "grid",
+              gridTemplateColumns: "64px 1fr",
+              gap: 2,
+              py: 2.75,
+              borderTop: `1px solid ${colors.borderNavy}`,
+              "&:last-child": { borderBottom: `1px solid ${colors.borderNavy}` },
             }}
           >
-            <CheckCircleOutlineIcon sx={{ color: colors.gold, mt: 0.25, flexShrink: 0 }} />
-            <Typography sx={{ fontWeight: 600, color: colors.textDark, fontSize: "1rem", lineHeight: 1.5 }}>
+            <Typography
+              className="font-serif"
+              sx={{
+                fontSize: "1.75rem",
+                fontWeight: 600,
+                color: colors.gold,
+                lineHeight: 1,
+              }}
+            >
+              {String(index + 1).padStart(2, "0")}
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 600,
+                color: colors.textDark,
+                fontSize: { xs: "1.05rem", md: "1.2rem" },
+                lineHeight: 1.45,
+                pt: 0.35,
+              }}
+            >
               {outcome}
             </Typography>
           </Box>

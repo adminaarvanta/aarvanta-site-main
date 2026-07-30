@@ -9,6 +9,7 @@ type SectionHeaderProps = {
   subtitle?: string;
   align?: "left" | "center";
   light?: boolean;
+  serif?: boolean;
 };
 
 export default function SectionHeader({
@@ -17,12 +18,13 @@ export default function SectionHeader({
   subtitle,
   align = "center",
   light = false,
+  serif = false,
 }: SectionHeaderProps) {
   return (
     <Box
       sx={{
         textAlign: align,
-        mb: { xs: 4, md: 5 },
+        mb: { xs: 5, md: 6 },
         maxWidth: align === "center" ? 720 : "none",
         mx: align === "center" ? "auto" : 0,
       }}
@@ -32,10 +34,10 @@ export default function SectionHeader({
           sx={{
             color: colors.gold,
             fontWeight: 700,
-            fontSize: "0.8rem",
-            letterSpacing: "0.12em",
+            fontSize: "0.75rem",
+            letterSpacing: "0.16em",
             textTransform: "uppercase",
-            mb: 1.5,
+            mb: 2,
           }}
         >
           {eyebrow}
@@ -43,13 +45,14 @@ export default function SectionHeader({
       )}
       <Typography
         component="h2"
+        className={serif ? "font-serif" : undefined}
         sx={{
-          fontSize: { xs: "1.75rem", md: "2.25rem" },
-          fontWeight: 800,
-          letterSpacing: "-0.02em",
+          fontSize: { xs: "1.85rem", md: serif ? "2.75rem" : "2.35rem" },
+          fontWeight: serif ? 600 : 800,
+          letterSpacing: serif ? "-0.01em" : "-0.03em",
           color: light ? colors.white : colors.textDark,
-          mb: subtitle ? 1.5 : 0,
-          lineHeight: 1.15,
+          mb: subtitle ? 1.75 : 0,
+          lineHeight: 1.12,
         }}
       >
         {title}

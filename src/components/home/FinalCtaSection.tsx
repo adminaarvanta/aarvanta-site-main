@@ -9,27 +9,28 @@ import { colors } from "@/lib/theme";
 export default function FinalCtaSection() {
   return (
     <SectionShell variant="navy" maxWidth="md">
-      <Box sx={{ textAlign: "center" }}>
+      <Box sx={{ textAlign: "center", py: { xs: 2, md: 4 } }}>
         <Typography
           component="h2"
+          className="font-serif"
           sx={{
             color: colors.white,
-            fontSize: { xs: "1.75rem", sm: "2.25rem", md: "2.5rem" },
-            fontWeight: 800,
+            fontSize: { xs: "2.25rem", sm: "3rem", md: "3.5rem" },
+            fontWeight: 600,
             letterSpacing: "-0.02em",
-            mb: 2,
-            lineHeight: 1.2,
+            mb: 2.5,
+            lineHeight: 1.1,
           }}
         >
           {finalCta.headline}
         </Typography>
         <Typography
           sx={{
-            color: "rgba(255,255,255,0.8)",
-            fontSize: { xs: "1rem", md: "1.125rem" },
-            lineHeight: 1.8,
-            mb: 4,
-            maxWidth: 560,
+            color: "rgba(255,255,255,0.75)",
+            fontSize: { xs: "1.05rem", md: "1.2rem" },
+            lineHeight: 1.75,
+            mb: 5,
+            maxWidth: 520,
             mx: "auto",
           }}
         >
