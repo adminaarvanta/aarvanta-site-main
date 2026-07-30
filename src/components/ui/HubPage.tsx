@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { Box, Container, Grid, Typography } from "@mui/material";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { Box, Container } from "@mui/material";
 import PageHero from "@/components/ui/PageHero";
 import NavButton from "@/components/ui/NavButton";
+import LinkTile from "@/components/ui/sections/LinkTile";
 import { colors } from "@/lib/theme";
 
 type HubLink = { label: string; href: string; description?: string };
@@ -26,57 +25,62 @@ export default function HubPage({
 }: HubPageProps) {
   return (
     <>
-      <PageHero title={title} subtitle={subtitle}>
+      <PageHero mode="hub" title={title} subtitle={subtitle} eyebrow="Explore">
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, mt: 3 }}>
-          <NavButton href={primaryCta.href} variant="contained" color="primary" size="large">
+          <NavButton href={primaryCta.href} variant="contained" color="secondary" size="large">
             {primaryCta.label}
           </NavButton>
-          <NavButton href={secondaryCta.href} variant="outlined" color="primary" size="large">
+          <NavButton
+            href={secondaryCta.href}
+            variant="outlined"
+            size="large"
+            sx={{
+              borderColor: "rgba(255,255,255,0.35)",
+              color: colors.white,
+              "&:hover": {
+                borderColor: colors.gold,
+                color: colors.goldLight,
+                bgcolor: "rgba(255,255,255,0.06)",
+              },
+            }}
+          >
             {secondaryCta.label}
           </NavButton>
         </Box>
       </PageHero>
 
-      <Box sx={{ py: { xs: 8, md: 10 }, bgcolor: colors.offWhite }}>
+      <Box sx={{ py: { xs: 8, md: 10 }, bgcolor: colors.mist }}>
         <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
-          <Grid container spacing={2}>
-            {links.map((link) => (
-              <Grid key={link.href + link.label} size={{ xs: 12, sm: 6, md: 4 }}>
-                <Box
-                  component={Link}
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
+              },
+              gap: 2,
+              gridAutoRows: "minmax(160px, auto)",
+            }}
+          >
+            {links.map((link, index) => (
+              <Box
+                key={link.href + link.label}
+                sx={{
+                  gridColumn: {
+                    md: index % 7 === 0 ? "span 2" : "span 1",
+                  },
+                }}
+              >
+                <LinkTile
+                  label={link.label}
                   href={link.href}
-                  sx={{
-                    display: "block",
-                    p: 3,
-                    height: "100%",
-                    bgcolor: colors.cream,
-                    borderRadius: 3,
-                    border: `1px solid ${colors.border}`,
-                    textDecoration: "none",
-                    transition: "all 0.2s ease",
-                    "&:hover": {
-                      borderColor: colors.primary,
-                      boxShadow: colors.cardShadow,
-                      transform: "translateY(-2px)",
-                    },
-                  }}
-                >
-                  <Typography sx={{ fontWeight: 700, color: colors.textDark, mb: 1 }}>
-                    {link.label}
-                  </Typography>
-                  {link.description && (
-                    <Typography sx={{ fontSize: "0.9rem", color: colors.textMuted, lineHeight: 1.6, mb: 2 }}>
-                      {link.description}
-                    </Typography>
-                  )}
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 0.5, color: colors.primary }}>
-                    <Typography sx={{ fontSize: "0.85rem", fontWeight: 600 }}>Explore</Typography>
-                    <ArrowForwardIcon sx={{ fontSize: 16 }} />
-                  </Box>
-                </Box>
-              </Grid>
+                  description={link.description}
+                  featured={index % 7 === 0}
+                />
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
     </>

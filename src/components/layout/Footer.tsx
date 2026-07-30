@@ -10,7 +10,7 @@ import Logo from "@/components/brand/Logo";
 function FooterColumn({ title, links }: { title: string; links: { label: string; href: string }[] }) {
   return (
     <Grid size={{ xs: 6, sm: 4, md: 2 }}>
-      <Typography sx={{ color: colors.primary, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}>
+      <Typography sx={{ color: colors.gold, fontWeight: 600, fontSize: "0.85rem", mb: 2 }}>
         {title}
       </Typography>
       {links.map((link) => (

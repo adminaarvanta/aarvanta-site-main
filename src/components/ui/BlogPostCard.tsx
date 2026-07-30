@@ -27,13 +27,13 @@ export default function BlogPostCard({
           p: 4,
           height: "100%",
           borderRadius: "16px",
-          bgcolor: colors.offWhite,
-          border: `1px solid ${colors.border}`,
+          bgcolor: colors.cream,
+          border: `1px solid ${colors.borderNavy}`,
           transition: "all 0.3s ease",
           "&:hover": {
-            borderColor: colors.mutedGold,
+            borderColor: colors.gold,
             transform: "translateY(-2px)",
-            boxShadow: "0 12px 40px rgba(15, 23, 41, 0.08)",
+            boxShadow: colors.cardShadow,
           },
         }}
       >
@@ -42,8 +42,8 @@ export default function BlogPostCard({
             label={category}
             size="small"
             sx={{
-              bgcolor: colors.iconBg,
-              color: colors.textDark,
+              bgcolor: colors.goldTint,
+              color: colors.primary,
               fontWeight: 600,
               fontSize: "0.75rem",
             }}

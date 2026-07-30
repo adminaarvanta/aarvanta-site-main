@@ -1,42 +1,97 @@
 "use client";
 
-import { Box, Chip, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import SectionShell from "@/components/ui/sections/SectionShell";
 import NavButton from "@/components/ui/NavButton";
 import { partnerSection } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function PartnerHomeSection() {
   return (
-    <Box sx={{ py: { xs: 7, md: 10 }, bgcolor: colors.cream }}>
-      <Container maxWidth="md" sx={{ px: { xs: 2, md: 3 }, textAlign: "center" }}>
-        <Typography
-          component="h2"
+    <SectionShell variant="splitRail" maxWidth={false} containerSx={{ maxWidth: 1100 }}>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1fr 1.15fr" },
+          gap: 0,
+          borderRadius: 3,
+          overflow: "hidden",
+          border: `1px solid ${colors.borderNavy}`,
+        }}
+      >
+        <Box
           sx={{
-            fontSize: { xs: "1.75rem", md: "2.25rem" },
-            fontWeight: 800,
-            letterSpacing: "-0.02em",
-            color: colors.textDark,
-            mb: 2,
+            bgcolor: colors.primary,
+            color: colors.cream,
+            p: { xs: 3.5, md: 4.5 },
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
-          {partnerSection.headline}
-        </Typography>
-        <Typography sx={{ color: colors.textMuted, mb: 3, maxWidth: 520, mx: "auto" }}>
-          {partnerSection.body}
-        </Typography>
-        <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 1, mb: 4 }}>
-          {partnerSection.types.map((type) => (
-            <Chip
-              key={type}
-              label={type}
-              sx={{ bgcolor: colors.offWhite, border: `1px solid ${colors.border}`, fontWeight: 600 }}
-            />
-          ))}
+          <Typography
+            sx={{
+              color: colors.gold,
+              fontWeight: 700,
+              fontSize: "0.75rem",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              mb: 1.5,
+            }}
+          >
+            Partners
+          </Typography>
+          <Typography sx={{ fontSize: { xs: "1.5rem", md: "1.85rem" }, fontWeight: 800, mb: 2, lineHeight: 1.2 }}>
+            {partnerSection.headline}
+          </Typography>
+          <Typography sx={{ color: "rgba(255,255,255,0.75)", mb: 3, lineHeight: 1.65 }}>
+            {partnerSection.body}
+          </Typography>
+          <NavButton href={partnerSection.cta.href} variant="outlined" color="secondary" size="medium">
+            {partnerSection.cta.label}
+          </NavButton>
         </Box>
-        <NavButton href={partnerSection.cta.href} variant="contained" color="primary" size="large">
-          {partnerSection.cta.label}
-        </NavButton>
-      </Container>
-    </Box>
+        <Box sx={{ bgcolor: colors.cream, p: { xs: 3.5, md: 4.5 } }}>
+          <Typography
+            sx={{
+              fontWeight: 800,
+              fontSize: "1.15rem",
+              color: colors.textDark,
+              mb: 2.5,
+            }}
+          >
+            Partner paths
+          </Typography>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+            {partnerSection.types.map((type) => (
+              <Box
+                key={type}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1.5,
+                  py: 1.25,
+                  borderBottom: `1px solid ${colors.border}`,
+                  "&:last-child": { borderBottom: "none" },
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 6,
+                    height: 6,
+                    borderRadius: "50%",
+                    bgcolor: colors.gold,
+                    flexShrink: 0,
+                  }}
+                />
+                <Typography sx={{ fontWeight: 600, color: colors.textDark, fontSize: "0.95rem" }}>
+                  {type}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+    </SectionShell>
   );
 }

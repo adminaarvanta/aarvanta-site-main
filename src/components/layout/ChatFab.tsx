@@ -19,7 +19,8 @@ export default function ChatFab() {
           zIndex: 1200,
           bgcolor: colors.primary,
           color: colors.white,
-          boxShadow: "0 8px 24px rgba(29, 78, 216, 0.35)",
+          boxShadow: "0 8px 24px rgba(0, 24, 72, 0.35)",
+          border: `1px solid ${colors.gold}`,
           "&:hover": {
             bgcolor: colors.primaryDark,
           },

@@ -58,7 +58,7 @@ function NavDropdown({ group }: { group: NavGroup }) {
           py: 1,
           borderRadius: 2,
           textTransform: "none",
-          "&:hover": { color: colors.primary, bgcolor: "rgba(29, 78, 216, 0.04)" },
+          "&:hover": { color: colors.primary, bgcolor: colors.goldTint },
         }}
       >
         {group.label}
@@ -82,7 +82,7 @@ function NavDropdown({ group }: { group: NavGroup }) {
           py: 1,
           borderRadius: 2,
           textTransform: "none",
-          "&:hover": { color: colors.primary, bgcolor: "rgba(29, 78, 216, 0.04)" },
+          "&:hover": { color: colors.primary, bgcolor: colors.goldTint },
         }}
       >
         {group.label}

@@ -2,15 +2,17 @@
 
 html {
   color-scheme: light;
-  --background: #f8f9fb;
-  --foreground: #0f172a;
+  --background: #f7f8fb;
+  --foreground: #0b1220;
   --gold: #d4af37;
   --cream: #ffffff;
-  --hero-wave: #eff6ff;
-  --border: #e2e8f0;
-  --text-muted: #64748b;
+  --hero-wave: #eef1f8;
+  --border: #e3e7ef;
+  --text-muted: #5b6578;
   --surface: #ffffff;
-  --primary: #1d4ed8;
+  --primary: #001848;
+  --navy-mid: #183078;
+  --deep-navy: #001233;
 }
 
 @theme inline {
@@ -46,18 +48,40 @@ html {
 }
 
 ::selection {
-  background-color: rgba(29, 78, 216, 0.15);
+  background-color: rgba(212, 175, 55, 0.25);
 }
 
 .hero-waves {
   background:
-    radial-gradient(ellipse 80% 50% at 70% 20%, rgba(29, 78, 216, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-    linear-gradient(180deg, var(--surface) 0%, var(--hero-wave) 45%, var(--background) 100%);
+    radial-gradient(ellipse 70% 55% at 78% 12%, rgba(212, 175, 55, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 12% 88%, rgba(0, 24, 72, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, var(--surface) 0%, var(--hero-wave) 48%, var(--background) 100%);
 }
 
 .section-cream {
   background: linear-gradient(180deg, var(--cream) 0%, var(--background) 100%);
+}
+
+.section-glass {
+  background:
+    radial-gradient(ellipse 80% 60% at 85% 0%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgba(0, 24, 72, 0.07) 0%, transparent 55%),
+    linear-gradient(165deg, #ffffff 0%, #eef1f8 100%);
+}
+
+.section-navy {
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 20%, rgba(212, 175, 55, 0.14) 0%, transparent 55%),
+    linear-gradient(160deg, #001233 0%, #001848 55%, #183078 100%);
+  color: #ffffff;
+}
+
+.section-mist {
+  background: linear-gradient(180deg, #f7f8fb 0%, #eef1f8 100%);
+}
+
+.section-editorial {
+  background: #ffffff;
 }
 
 @keyframes float-card {

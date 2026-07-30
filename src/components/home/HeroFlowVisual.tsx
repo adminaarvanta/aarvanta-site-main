@@ -9,46 +9,30 @@ export default function HeroFlowVisual() {
     <Box
       sx={{
         position: "relative",
-        bgcolor: colors.offWhite,
+        bgcolor: "rgba(255,255,255,0.72)",
+        backdropFilter: "blur(12px)",
         borderRadius: 4,
-        border: `1px solid ${colors.border}`,
-        boxShadow: "0 20px 60px rgba(15, 23, 42, 0.08)",
+        border: `1px solid ${colors.borderNavy}`,
+        boxShadow: colors.cardShadow,
         p: { xs: 2.5, md: 3.5 },
         overflow: "hidden",
         minHeight: { xs: 280, md: 360 },
       }}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse at top right, rgba(37, 99, 235, 0.08), transparent 55%)",
-          pointerEvents: "none",
-        }}
-      />
       <Typography
         sx={{
           fontSize: "0.75rem",
           fontWeight: 700,
-          letterSpacing: "0.08em",
+          letterSpacing: "0.1em",
           textTransform: "uppercase",
-          color: colors.primary,
+          color: colors.gold,
           mb: 3,
-          position: "relative",
         }}
       >
         Live business flow
       </Typography>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          gap: 1.25,
-          position: "relative",
-        }}
-      >
+      <Box sx={{ display: "flex", flexDirection: "column", gap: 1.25 }}>
         {heroFlowSteps.map((step, index) => (
           <Box
             key={step}
@@ -65,9 +49,9 @@ export default function HeroFlowVisual() {
                 width: 10,
                 height: 10,
                 borderRadius: "50%",
-                bgcolor: colors.primary,
+                bgcolor: index === 0 ? colors.gold : colors.primary,
                 flexShrink: 0,
-                boxShadow: "0 0 0 4px rgba(37, 99, 235, 0.15)",
+                boxShadow: `0 0 0 4px ${index === 0 ? colors.goldTint : colors.iconBg}`,
               }}
             />
             <Box

@@ -23,26 +23,29 @@ export default function CTASection({
 }: CTASectionProps) {
   return (
     <Box
+      className="section-navy"
       sx={{
         py: { xs: 10, md: 14 },
-        bgcolor: colors.deepNavy,
         position: "relative",
         overflow: "hidden",
       }}
     >
-      <Box
-        sx={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse at center, rgba(184, 149, 106, 0.1) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
       <Container maxWidth="md" sx={{ position: "relative", textAlign: "center" }}>
         <Typography
+          sx={{
+            color: colors.gold,
+            fontWeight: 700,
+            fontSize: "0.8rem",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            mb: 2,
+          }}
+        >
+          Next step
+        </Typography>
+        <Typography
           variant="h2"
-          sx={{ color: colors.white, fontSize: { xs: "1.75rem", md: "2.25rem" }, mb: 2 }}
+          sx={{ color: colors.white, fontSize: { xs: "1.75rem", md: "2.25rem" }, mb: 2, fontWeight: 800 }}
         >
           {title}
         </Typography>
@@ -57,8 +60,12 @@ export default function CTASection({
             component={Link}
             href={primaryHref}
             variant="contained"
-            color="secondary"
             size="large"
+            sx={{
+              bgcolor: colors.gold,
+              color: colors.deepNavy,
+              "&:hover": { bgcolor: colors.goldLight },
+            }}
           >
             {primaryLabel}
           </Button>
@@ -68,9 +75,9 @@ export default function CTASection({
             variant="outlined"
             size="large"
             sx={{
-              borderColor: "rgba(255,255,255,0.3)",
+              borderColor: "rgba(255,255,255,0.35)",
               color: colors.white,
-              "&:hover": { borderColor: colors.white, bgcolor: "rgba(255,255,255,0.05)" },
+              "&:hover": { borderColor: colors.gold, bgcolor: "rgba(212,175,55,0.08)" },
             }}
           >
             {secondaryLabel}

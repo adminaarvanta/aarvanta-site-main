@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import PageHero from "@/components/ui/PageHero";
 import NavButton from "@/components/ui/NavButton";
+import SectionShell from "@/components/ui/sections/SectionShell";
+import MetricBlock from "@/components/ui/sections/MetricBlock";
 import { caseStudies } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
@@ -15,101 +17,65 @@ export default function CaseStudiesPage() {
   return (
     <>
       <PageHero
+        mode="marketing"
+        eyebrow="Outcomes"
         title="Focused on Outcomes, Not Buzzwords."
         subtitle="Operational improvements and measurable business results from real deployments."
       />
 
-      <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="xl">
-          <Grid container spacing={4}>
-            {caseStudies.map((study, index) => (
-              <Grid key={index} size={{ xs: 12, md: 4 }}>
-                <Box
-                  sx={{
-                    p: 5,
-                    height: "100%",
-                    borderRadius: "16px",
-                    bgcolor: colors.offWhite,
-                    border: `1px solid ${colors.border}`,
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "3rem",
-                      fontWeight: 700,
-                      color: colors.mutedGold,
-                      fontFamily: "var(--font-manrope)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {study.metric}
-                  </Typography>
-                  <Typography
-                    variant="caption"
-                    sx={{
-                      color: colors.textSecondary,
-                      display: "block",
-                      mb: 3,
-                      mt: 1,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {study.metricLabel}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: colors.softCharcoal,
-                      lineHeight: 1.8,
-                      fontSize: "1.05rem",
-                      mb: 3,
-                    }}
-                  >
-                    {study.outcome}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: colors.mutedGold,
-                      fontWeight: 600,
-                      fontSize: "0.875rem",
-                    }}
-                  >
-                    {study.industry}
-                  </Typography>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+      <SectionShell variant="metricBand" maxWidth={false} containerSx={{ maxWidth: 1100 }}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", md: "repeat(3, 1fr)" },
+            gap: { xs: 3, md: 5 },
+            mb: 6,
+          }}
+        >
+          {caseStudies.map((study) => (
+            <Box key={study.industry}>
+              <MetricBlock
+                value={study.metric}
+                label={study.metricLabel}
+                detail={study.outcome}
+              />
+              <Typography
+                sx={{
+                  color: colors.gold,
+                  fontWeight: 700,
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.06em",
+                  textTransform: "uppercase",
+                  mt: 1.5,
+                }}
+              >
+                {study.industry}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
 
-          <Box
-            sx={{
-              mt: 8,
-              p: 5,
-              borderRadius: "16px",
-              bgcolor: colors.offWhite,
-              border: `1px solid ${colors.border}`,
-              textAlign: "center",
-            }}
-          >
-            <Typography
-              variant="h5"
-              sx={{ color: colors.textDark, mb: 2 }}
-            >
-              Ready to achieve similar results?
-            </Typography>
-            <Typography
-              sx={{ color: colors.textSecondary, mb: 3, maxWidth: 520, mx: "auto" }}
-            >
-              Book a strategy call to discuss how AARVANTA infrastructure can
-              transform your operations.
-            </Typography>
-            <NavButton href="/book-demo" variant="contained" color="primary" size="large">
-              Book a Demo
-            </NavButton>
-          </Box>
-        </Container>
-      </Box>
+        <Box
+          sx={{
+            p: { xs: 4, md: 5 },
+            borderRadius: 3,
+            bgcolor: colors.primary,
+            textAlign: "center",
+            border: `1px solid ${colors.gold}`,
+          }}
+        >
+          <Typography sx={{ color: colors.white, fontWeight: 800, fontSize: "1.35rem", mb: 1.5 }}>
+            Ready to achieve similar results?
+          </Typography>
+          <Typography sx={{ color: "rgba(255,255,255,0.75)", mb: 3, maxWidth: 520, mx: "auto" }}>
+            Book a strategy call to discuss how AARVANTA infrastructure can transform your
+            operations.
+          </Typography>
+          <NavButton href="/book-demo" variant="contained" color="secondary" size="large">
+            Book a Demo
+          </NavButton>
+        </Box>
+      </SectionShell>
     </>
   );
 }

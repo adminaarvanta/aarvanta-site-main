@@ -14,7 +14,7 @@ export type PricingTier = {
 export default function PricingTierCard({ tier }: { tier: PricingTier }) {
   const highlighted = Boolean(tier.highlighted);
   const featureColor = highlighted ? colors.white : colors.textMuted;
-  const iconColor = highlighted ? colors.primaryLight : colors.primary;
+  const iconColor = highlighted ? colors.goldLight : colors.gold;
 
   return (
     <Box
@@ -23,8 +23,8 @@ export default function PricingTierCard({ tier }: { tier: PricingTier }) {
         height: "100%",
         borderRadius: 3,
         bgcolor: highlighted ? colors.primary : colors.offWhite,
-        border: highlighted ? "none" : `1px solid ${colors.border}`,
-        boxShadow: highlighted ? "0 16px 40px rgba(37, 99, 235, 0.25)" : "none",
+        border: highlighted ? `2px solid ${colors.gold}` : `1px solid ${colors.borderNavy}`,
+        boxShadow: highlighted ? "0 16px 40px rgba(0, 24, 72, 0.28)" : colors.cardShadow,
         display: "flex",
         flexDirection: "column",
       }}

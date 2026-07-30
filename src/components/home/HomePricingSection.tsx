@@ -1,54 +1,62 @@
 "use client";
 
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import SectionShell from "@/components/ui/sections/SectionShell";
+import SectionHeader from "@/components/ui/sections/SectionHeader";
 import NavButton from "@/components/ui/NavButton";
 import { pricingSection, pricingTiers } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function HomePricingSection() {
   return (
-    <Box sx={{ py: { xs: 7, md: 10 }, bgcolor: colors.cream }} id="pricing">
-      <Container maxWidth={false} sx={{ px: { xs: 2, md: 4 }, maxWidth: 1200 }}>
-        <Box sx={{ textAlign: "center", mb: 5 }}>
-          <Typography
-            component="h2"
-            sx={{
-              fontSize: { xs: "1.75rem", md: "2.25rem" },
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              color: colors.textDark,
-              mb: 1,
-            }}
-          >
-            Pricing
-          </Typography>
-          <Typography sx={{ color: colors.textMuted }}>{pricingSection.headline}</Typography>
-          <Typography sx={{ color: colors.textMuted, fontSize: "0.9rem", mt: 0.5 }}>
-            {pricingSection.disclaimer}
-          </Typography>
-        </Box>
+    <SectionShell variant="tileGrid" id="pricing" maxWidth={false} containerSx={{ maxWidth: 1200 }}>
+      <SectionHeader
+        eyebrow="Pricing"
+        title="Pricing"
+        subtitle={`${pricingSection.headline} ${pricingSection.disclaimer}`}
+      />
 
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" },
-            gap: 2,
-          }}
-        >
-          {pricingTiers.map((tier) => (
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(4, 1fr)" },
+          gap: 2,
+          alignItems: "stretch",
+        }}
+      >
+        {pricingTiers.map((tier) => {
+          const featured = Boolean(tier.highlighted);
+          return (
             <Box
               key={tier.name}
               sx={{
                 p: 3,
                 borderRadius: 3,
-                bgcolor: tier.highlighted ? colors.primary : colors.offWhite,
-                color: tier.highlighted ? colors.white : colors.textDark,
-                border: tier.highlighted ? "none" : `1px solid ${colors.border}`,
+                bgcolor: featured ? colors.primary : colors.offWhite,
+                color: featured ? colors.white : colors.textDark,
+                border: featured ? `2px solid ${colors.gold}` : `1px solid ${colors.borderNavy}`,
                 display: "flex",
                 flexDirection: "column",
-                minHeight: 340,
+                minHeight: featured ? { lg: 380 } : 340,
+                transform: featured ? { lg: "scale(1.03)" } : undefined,
+                boxShadow: featured ? "0 16px 40px rgba(0,24,72,0.28)" : colors.cardShadow,
+                zIndex: featured ? 1 : 0,
               }}
             >
+              {featured && (
+                <Typography
+                  sx={{
+                    color: colors.gold,
+                    fontWeight: 700,
+                    fontSize: "0.7rem",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    mb: 1,
+                  }}
+                >
+                  Most popular
+                </Typography>
+              )}
               <Typography sx={{ fontWeight: 800, fontSize: "1.1rem", mb: 1 }}>{tier.name}</Typography>
               <Box sx={{ display: "flex", alignItems: "baseline", gap: 0.5, mb: 1 }}>
                 <Typography sx={{ fontSize: "1.75rem", fontWeight: 800, letterSpacing: "-0.02em" }}>
@@ -62,8 +70,7 @@ export default function HomePricingSection() {
                 sx={{
                   fontSize: "0.85rem",
                   mb: 2.5,
-                  opacity: tier.highlighted ? 0.9 : 1,
-                  color: tier.highlighted ? "rgba(255,255,255,0.85)" : colors.textMuted,
+                  color: featured ? "rgba(255,255,255,0.85)" : colors.textMuted,
                 }}
               >
                 {tier.description}
@@ -74,7 +81,7 @@ export default function HomePricingSection() {
                     key={feature}
                     sx={{
                       fontSize: "0.85rem",
-                      color: tier.highlighted ? "rgba(255,255,255,0.9)" : colors.textMuted,
+                      color: featured ? "rgba(255,255,255,0.9)" : colors.textMuted,
                     }}
                   >
                     • {feature}
@@ -83,25 +90,16 @@ export default function HomePricingSection() {
               </Box>
               <NavButton
                 href="/book-demo"
-                variant={tier.highlighted ? "outlined" : "contained"}
-                color="primary"
+                variant={featured ? "outlined" : "contained"}
+                color={featured ? "secondary" : "primary"}
                 fullWidth
-                sx={
-                  tier.highlighted
-                    ? {
-                        borderColor: colors.white,
-                        color: colors.white,
-                        "&:hover": { borderColor: colors.white, bgcolor: "rgba(255,255,255,0.1)" },
-                      }
-                    : undefined
-                }
               >
                 {tier.name === "Enterprise" ? "Let's Talk" : "Start Free Trial"}
               </NavButton>
             </Box>
-          ))}
-        </Box>
-      </Container>
-    </Box>
+          );
+        })}
+      </Box>
+    </SectionShell>
   );
 }

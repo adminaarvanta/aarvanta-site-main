@@ -22,9 +22,7 @@ const listSx = {
 
 function LegalBlockContent({ block }: { block: LegalBlock }) {
   if (block.kind === "paragraph") {
-    return (
-      <Typography sx={{ ...bodySx, mb: 1.5 }}>{block.text}</Typography>
-    );
+    return <Typography sx={{ ...bodySx, mb: 1.5 }}>{block.text}</Typography>;
   }
 
   if (block.kind === "list") {
@@ -72,24 +70,44 @@ function LegalSectionContent({
       sx={{
         mb: 5,
         pb: 5,
-        borderBottom: `1px solid ${colors.border}`,
+        borderBottom: `1px solid ${colors.borderNavy}`,
         "&:last-child": { borderBottom: "none", pb: 0, mb: 0 },
       }}
     >
-      <Typography
-        component="h2"
-        className="font-serif"
+      <Box sx={{ display: "flex", alignItems: "baseline", gap: 1.5, mb: 2 }}>
+        <Typography
+          sx={{
+            color: colors.gold,
+            fontWeight: 800,
+            fontSize: "0.85rem",
+            letterSpacing: "0.08em",
+            flexShrink: 0,
+          }}
+        >
+          {String(index + 1).padStart(2, "0")}
+        </Typography>
+        <Typography
+          component="h2"
+          className="font-serif"
+          sx={{
+            fontSize: { xs: "1.25rem", md: "1.4rem" },
+            color: colors.textDark,
+          }}
+        >
+          {section.title}
+        </Typography>
+      </Box>
+      <Box
         sx={{
-          fontSize: { xs: "1.25rem", md: "1.4rem" },
-          color: colors.textDark,
-          mb: 2,
+          borderLeft: `2px solid ${colors.borderNavy}`,
+          pl: 2.5,
+          ml: 0.5,
         }}
       >
-        {index + 1}. {section.title}
-      </Typography>
-      {section.blocks.map((block, blockIndex) => (
-        <LegalBlockContent key={`${section.title}-${blockIndex}`} block={block} />
-      ))}
+        {section.blocks.map((block, blockIndex) => (
+          <LegalBlockContent key={`${section.title}-${blockIndex}`} block={block} />
+        ))}
+      </Box>
     </Box>
   );
 }
@@ -109,15 +127,17 @@ export default function LegalPage({
 }: LegalPageProps) {
   return (
     <>
-      <PageHero title={title} />
-      <Box sx={{ py: { xs: 6, md: 10 } }}>
-        <Container maxWidth="md" sx={{ px: { xs: 2, md: 3 } }}>
+      <PageHero mode="editorial" title={title} eyebrow="Legal" />
+      <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: colors.cream }}>
+        <Container maxWidth="md" sx={{ px: { xs: 2, md: 3 }, maxWidth: 760 }}>
           {lastUpdated && (
             <Typography
               sx={{
                 color: colors.textMuted,
                 fontSize: "0.95rem",
                 mb: 4,
+                pb: 3,
+                borderBottom: `1px solid ${colors.borderNavy}`,
               }}
             >
               Last Updated: {lastUpdated}
@@ -125,11 +145,7 @@ export default function LegalPage({
           )}
           {sections ? (
             sections.map((section, index) => (
-              <LegalSectionContent
-                key={section.title}
-                section={section}
-                index={index}
-              />
+              <LegalSectionContent key={section.title} section={section} index={index} />
             ))
           ) : (
             <Typography variant="body1" sx={bodySx}>

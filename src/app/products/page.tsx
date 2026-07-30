@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Box, Container, Grid, Typography, Chip } from "@mui/material";
+import { Box, Chip } from "@mui/material";
 import PageHero from "@/components/ui/PageHero";
 import NavButton from "@/components/ui/NavButton";
+import SectionShell from "@/components/ui/sections/SectionShell";
+import ProductTile from "@/components/ui/sections/ProductTile";
 import { products } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
@@ -15,73 +17,49 @@ export default function ProductsPage() {
   return (
     <>
       <PageHero
+        mode="marketing"
+        eyebrow="Platform"
         title="Products Designed to Work Together."
-        subtitle="Six interconnected AI systems forming one complete business infrastructure."
+        subtitle="Interconnected AI systems forming one complete business infrastructure."
       />
 
-      <Box sx={{ py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="lg" sx={{ px: { xs: 2, md: 3 } }}>
-          <Grid container spacing={4}>
-            {products.map((product) => (
-              <Grid key={product.id} size={{ xs: 12, md: 6 }}>
-                <Box
-                  id={product.id}
-                  sx={{
-                    p: 5,
-                    height: "100%",
-                    borderRadius: "16px",
-                    bgcolor: colors.offWhite,
-                    border: `1px solid ${colors.border}`,
-                    scrollMarginTop: 100,
-                  }}
-                >
+      <SectionShell variant="tileGrid" maxWidth={false} containerSx={{ maxWidth: 1200 }}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" },
+            gap: 2.5,
+          }}
+        >
+          {products.map((product, index) => (
+            <Box key={product.id} id={product.id} sx={{ scrollMarginTop: 100 }}>
+              <ProductTile
+                name={product.name}
+                description={product.description}
+                href={`/products#${product.id}`}
+                featured={index === 2}
+              />
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mt: 1.5 }}>
+                {product.features.map((feature) => (
                   <Chip
-                    label={product.shortName}
-                    sx={{
-                      mb: 2,
-                      bgcolor: colors.gold,
-                      color: colors.cream,
-                      fontWeight: 600,
-                    }}
+                    key={feature}
+                    label={feature}
+                    size="small"
+                    variant="outlined"
+                    sx={{ borderColor: colors.borderNavy }}
                   />
-                  <Typography
-                    variant="h4"
-                    sx={{ color: colors.textDark, mb: 2, fontSize: "1.5rem" }}
-                  >
-                    {product.name}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: colors.textSecondary,
-                      lineHeight: 1.8,
-                      mb: 3,
-                    }}
-                  >
-                    {product.description}
-                  </Typography>
-                  <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1 }}>
-                    {product.features.map((feature) => (
-                      <Chip
-                        key={feature}
-                        label={feature}
-                        variant="outlined"
-                        size="small"
-                        sx={{ borderColor: colors.border }}
-                      />
-                    ))}
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
+                ))}
+              </Box>
+            </Box>
+          ))}
+        </Box>
 
-          <Box sx={{ textAlign: "center", mt: 8 }}>
-            <NavButton href="/book-demo" variant="contained" color="primary" size="large">
-              Book a Demo
-            </NavButton>
-          </Box>
-        </Container>
-      </Box>
+        <Box sx={{ textAlign: "center", mt: 6 }}>
+          <NavButton href="/book-demo" variant="contained" color="primary" size="large">
+            Book a Demo
+          </NavButton>
+        </Box>
+      </SectionShell>
     </>
   );
 }

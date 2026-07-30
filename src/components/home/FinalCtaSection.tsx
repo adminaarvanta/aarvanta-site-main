@@ -1,33 +1,15 @@
 "use client";
 
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import SectionShell from "@/components/ui/sections/SectionShell";
 import NavButton from "@/components/ui/NavButton";
 import { finalCta } from "@/lib/content";
 import { colors } from "@/lib/theme";
 
 export default function FinalCtaSection() {
   return (
-    <Box
-      sx={{
-        py: { xs: 8, md: 12 },
-        bgcolor: colors.deepNavy,
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: 800,
-          height: 400,
-          background: "radial-gradient(ellipse, rgba(37, 99, 235, 0.25) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-      <Container maxWidth="md" sx={{ position: "relative", zIndex: 1, px: { xs: 2, md: 3 }, textAlign: "center" }}>
+    <SectionShell variant="navy" maxWidth="md">
+      <Box sx={{ textAlign: "center" }}>
         <Typography
           component="h2"
           sx={{
@@ -54,7 +36,12 @@ export default function FinalCtaSection() {
           {finalCta.body}
         </Typography>
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 2, justifyContent: "center" }}>
-          <NavButton href={finalCta.primaryCta.href} variant="contained" color="primary" size="large">
+          <NavButton
+            href={finalCta.primaryCta.href}
+            variant="contained"
+            color="secondary"
+            size="large"
+          >
             {finalCta.primaryCta.label}
           </NavButton>
           <NavButton
@@ -65,7 +52,8 @@ export default function FinalCtaSection() {
               borderColor: "rgba(255,255,255,0.4)",
               color: colors.white,
               "&:hover": {
-                borderColor: colors.white,
+                borderColor: colors.gold,
+                color: colors.goldLight,
                 bgcolor: "rgba(255,255,255,0.06)",
               },
             }}
@@ -73,7 +61,7 @@ export default function FinalCtaSection() {
             {finalCta.secondaryCta.label}
           </NavButton>
         </Box>
-      </Container>
-    </Box>
+      </Box>
+    </SectionShell>
   );
 }

@@ -11,8 +11,10 @@ const theme = createTheme({
       contrastText: colors.white,
     },
     secondary: {
-      main: colors.deepNavy,
-      contrastText: colors.white,
+      main: colors.gold,
+      dark: colors.goldDark,
+      light: colors.goldLight,
+      contrastText: colors.deepNavy,
     },
     background: {
       default: colors.offWhite,
@@ -27,12 +29,12 @@ const theme = createTheme({
   typography: {
     fontFamily: "var(--font-inter), Inter, system-ui, sans-serif",
     h1: {
-      fontWeight: 700,
-      letterSpacing: "-0.02em",
+      fontWeight: 800,
+      letterSpacing: "-0.03em",
       color: colors.textDark,
     },
     h2: {
-      fontWeight: 700,
+      fontWeight: 800,
       letterSpacing: "-0.02em",
       color: colors.textDark,
     },
@@ -48,7 +50,7 @@ const theme = createTheme({
       letterSpacing: "0.02em",
     },
   },
-  shape: { borderRadius: 12 },
+  shape: { borderRadius: 14 },
   components: {
     MuiButton: {
       styleOverrides: {
@@ -63,23 +65,24 @@ const theme = createTheme({
           props: { variant: "contained", color: "primary" },
           style: {
             background: `linear-gradient(180deg, ${colors.primaryLight} 0%, ${colors.primary} 100%)`,
-            boxShadow: "0 4px 16px rgba(29, 78, 216, 0.25)",
+            boxShadow: "0 6px 20px rgba(0, 24, 72, 0.28)",
             color: colors.white,
             "&:hover": {
-              background: `linear-gradient(180deg, ${colors.primary} 0%, ${colors.primaryDark} 100%)`,
+              background: `linear-gradient(180deg, ${colors.navyMid} 0%, ${colors.primaryDark} 100%)`,
+              boxShadow: "0 8px 24px rgba(0, 24, 72, 0.35)",
             },
           },
         },
         {
           props: { variant: "outlined", color: "primary" },
           style: {
-            borderColor: colors.border,
+            borderColor: colors.borderNavy,
             borderWidth: 1.5,
-            color: colors.textDark,
+            color: colors.primary,
             "&:hover": {
               borderWidth: 1.5,
-              borderColor: colors.primary,
-              backgroundColor: "rgba(29, 78, 216, 0.04)",
+              borderColor: colors.gold,
+              backgroundColor: colors.goldTint,
             },
           },
         },
