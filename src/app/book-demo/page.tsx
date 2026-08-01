@@ -70,7 +70,11 @@ export default function BookDemoPage() {
             <Typography sx={{ color: colors.textDark, mb: 3, fontWeight: 800, fontSize: "1.25rem" }}>
               Schedule Your Demo
             </Typography>
-            <ContactForm submitLabel="Book a Demo" showTeamSize={true} />
+            <ContactForm
+              submitLabel="Book a Demo"
+              showTeamSize={true}
+              formSubject="New demo request — aarvanta.co"
+            />
           </Box>
         </Box>
       </SectionShell>

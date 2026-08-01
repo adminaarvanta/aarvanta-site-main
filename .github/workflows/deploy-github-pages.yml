@@ -18,6 +18,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_BASE_PATH: /aarvanta-site-main
+      # Optional: Formspree form id (repo secret). Falls back to FormSubmit → admin@aarvanta.co
+      NEXT_PUBLIC_FORMSPREE_FORM_ID: ${{ secrets.NEXT_PUBLIC_FORMSPREE_FORM_ID }}
+      NEXT_PUBLIC_FORM_TO_EMAIL: ${{ secrets.NEXT_PUBLIC_FORM_TO_EMAIL }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
